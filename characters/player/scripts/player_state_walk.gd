@@ -1,4 +1,5 @@
-class_name StateWalk extends State
+#characters/player/scripts/player_state_walk.gd
+class_name StateWalk extends PlayerState
 
 @onready var idle: State = $"../Idle"
 @onready var attack: StateAttack = $"../Attack"
@@ -13,7 +14,7 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process(delta: float) -> State:
+func process(_delta: float) -> State:
 	if player.direction == Vector2.ZERO:
 		return idle
 	player.velocity = player.direction * move_speed
@@ -22,7 +23,7 @@ func process(delta: float) -> State:
 	
 	return null
 	
-func physics(delta: float) -> State:
+func physics(_delta: float) -> State:
 	return null
 	
 func handle_input(event: InputEvent) -> State:

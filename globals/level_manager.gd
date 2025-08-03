@@ -1,3 +1,4 @@
+#globals/level_manager.gd
 extends Node
 
 var current_bounds : Array[Vector2]

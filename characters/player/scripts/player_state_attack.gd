@@ -1,8 +1,9 @@
-class_name StateAttack extends State
+#characters/player/scripts/player_state_attack.gd
+class_name StateAttack extends PlayerState
 
-@onready var attack: State = $"../Attack"
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
+@onready var attack: State = $"../Attack"
 @onready var hurtbox: Hurtbox = $"../../Interactions/Hurtbox"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
@@ -40,10 +41,10 @@ func process(delta: float) -> State:
 		return walk
 	return null
 	
-func physics(delta: float) -> State:
+func physics(_delta: float) -> State:
 	return null
 	
-func handle_input(event: InputEvent) -> State:
+func handle_input(_event: InputEvent) -> State:
 	return null
 
 func end_attack(_newAnimName) -> void:
