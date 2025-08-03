@@ -14,3 +14,13 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Assets
+*.import
+*.wav
+*.png
+*.svg
+*.ogg
+*.jpg
+*.jpeg
+*.mp3
