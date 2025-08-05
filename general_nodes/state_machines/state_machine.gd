@@ -24,14 +24,3 @@ func change_state(new_state : State) -> void:
 	previous_state = current_state
 	current_state = new_state
 	current_state.enter()
-
-func initialize(_entity) -> void:
-	states = []
-	
-	for child in get_children():
-		if child is State:
-			states.append(child)
-	
-	if states.size() > 0:
-		change_state(states[0])
-		process_mode = Node.PROCESS_MODE_INHERIT

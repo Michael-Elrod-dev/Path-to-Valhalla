@@ -4,7 +4,7 @@ class_name StateAttack extends PlayerState
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
 @onready var attack: State = $"../Attack"
-@onready var hurtbox: Hurtbox = $"../../Interactions/Hurtbox"
+@onready var hurtbox: Hurtbox = %AttackHurtbox
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 
@@ -24,7 +24,8 @@ func enter() -> void:
 	attacking = true
 	
 	await get_tree().create_timer(0.075).timeout
-	hurtbox.monitoring = true
+	if attacking:
+		hurtbox.monitoring = true
 
 func exit() -> void:
 	player.idle_walk_sprite.visible = true

@@ -1,21 +1,16 @@
 #characters/enemies/scripts/enemy.gd
 class_name Enemy extends Character
 
-@export var Health : int = 3
-
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
 
 var player : Player
-
-# Store directions as a member variable
 var direction_8: Array
 
 func _ready() -> void:
-	# Initialize the directions array
+	super._ready()
 	direction_8 = get_eight_directions()
-	
 	enemy_state_machine.initialize(self)
 	player = PlayerManager.player
 	hitbox.damaged.connect(_on_hitbox_damaged)
@@ -28,16 +23,13 @@ func set_direction(new_direction : Vector2) -> bool:
 	if direction == Vector2.ZERO:
 		return false
 	
-	# Convert to one of 8 cardinal directions
 	var best_direction = get_nearest_direction(direction)
-	
 	if best_direction == cardinal_direction:
 		return false
 	
 	cardinal_direction = best_direction
 	direction_changed.emit(best_direction)
 	
-	# Handle sprite flipping for all left-facing directions
 	if cardinal_direction.x < 0:  # Any left-facing direction
 		sprite.scale.x = -1
 	elif cardinal_direction.x > 0:  # Any right-facing direction
@@ -67,5 +59,5 @@ func animation_direction() -> String:
 	else:
 		return "down"  # fallback
 
-func _on_hitbox_damaged(damage : int) -> void:
-	Health = take_damage(damage, Health)
+func _on_hitbox_damaged(hurtbox: Hurtbox) -> void:
+	take_damage(hurtbox)

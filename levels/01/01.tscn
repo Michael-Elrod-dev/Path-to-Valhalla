@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://knvbr7tdes1r"]
+
+[ext_resource type="Script" uid="uid://ckesta5xb4100" path="res://levels/scripts/level.gd" id="1_ivs8d"]
+[ext_resource type="PackedScene" uid="uid://cj0mvhmg1ewri" path="res://tile_maps/environment.tscn" id="1_ve0xq"]
+[ext_resource type="PackedScene" uid="uid://breoamcyteuui" path="res://levels/player_spawn.tscn" id="2_ivs8d"]
+
+[node name="01" type="Node2D"]
+script = ExtResource("1_ivs8d")
+
+[node name="Environment" parent="." instance=ExtResource("1_ve0xq")]
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("2_ivs8d")]
+position = Vector2(47, 123)

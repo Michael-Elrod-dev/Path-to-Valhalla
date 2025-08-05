@@ -11,13 +11,13 @@ Trials of Odin is a 2D top-down game featuring player combat, enemy AI, and a st
 ```
 Trials-of-Odin/
 ├── globals/                      # Singleton managers
-│   ├── player_manager.gd        # Global player reference
-│   └── level_manager.gd         # Level bounds management
+│   ├── player_manager.gd         # Global player reference
+│   └── level_manager.gd          # Level bounds management
 │
 ├── characters/                   # All game characters
-│   ├── character.gd             # Base character class
+│   ├── character.gd              # Base character class
 │   │
-│   ├── player/                  # Player implementation
+│   ├── player/                   # Player implementation
 │   │   └── scripts/
 │   │       ├── player.gd
 │   │       ├── player_camera.gd
@@ -26,22 +26,22 @@ Trials-of-Odin/
 │   │       ├── player_state.gd
 │   │       └── player states (idle, walk, attack)
 │   │
-│   └── enemies/                 # Enemy implementations
+│   └── enemies/                  # Enemy implementations
 │       └── scripts/
 │           ├── enemy.gd
 │           ├── enemy_state_machine.gd
 │           ├── enemy_state.gd
 │           └── enemy states (idle, wander, stun, destroy)
 │
-├── general_nodes/               # Reusable components
-│   ├── state_machine/          # Base state machine system
-│   │   ├── state_machine.gd   # Base state machine class
-│   │   └── state.gd           # Base state class
-│   ├── hitbox/                 # Damage detection areas
+├── general_nodes/                # Reusable components
+│   ├── state_machine/            # Base state machine system
+│   │   ├── state_machine.gd      # Base state machine class
+│   │   └── state.gd              # Base state class
+│   ├── hitbox/                   # Damage detection areas
 │   │   └── hitbox.gd
-│   └── hurtbox/                # Damage dealing areas
+│   └── hurtbox/                  # Damage dealing areas
 │       └── hurtbox.gd
 │
-└── tile_maps/                   # Level and tilemap systems
+└── tile_maps/                    # Level and tilemap systems
 	└── level_tilemap.gd
 ```

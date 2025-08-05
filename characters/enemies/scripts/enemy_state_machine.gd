@@ -13,6 +13,8 @@ func initialize(enemy : Enemy) -> void:
 		s.state_machine = self
 		s.initialize()
 		
-	if states.size() > 0:
-		change_state(states[0])
-		process_mode = Node.PROCESS_MODE_INHERIT
+	if states.size() == 0:
+		return
+		
+	change_state(states[0])
+	process_mode = Node.PROCESS_MODE_INHERIT

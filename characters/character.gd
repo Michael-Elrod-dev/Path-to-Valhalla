@@ -1,13 +1,19 @@
 #characters/character.gd
 class_name Character extends CharacterBody2D
 
+@export var max_health: int = 0
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 signal direction_changed(new_direction: Vector2)
-signal damaged(damage : int)
-signal destroyed()
+signal healed(health: int)
+signal damaged(hurtbox: Hurtbox)
+signal destroyed(hurtbox: Hurtbox)
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable : bool = false
+var current_health: int = 0
 
 static var _cached_directions: Array = []
 static func get_eight_directions() -> Array:
@@ -24,28 +30,20 @@ static func get_eight_directions() -> Array:
 		]
 	return _cached_directions
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+func _ready() -> void:
+	current_health = max_health
 
 func _physics_process(_delta):
 	move_and_slide()
 
-func set_direction(_new_direction: Vector2) -> bool:
-	# To be overridden by child classes
-	return false
-
-func update_animation(_state: String) -> void:
-	# To be overridden by child classes
-	pass
-
-func take_damage(damage : int, health: int) -> int:
+func take_damage(hurtbox: Hurtbox) -> void:
 	if invulnerable:
-		return health
-	health -= damage
-	if health > 0:
-		damaged.emit(damage)
+		return
+	current_health -= hurtbox.damage
+	if current_health > 0:
+		damaged.emit(hurtbox)
 	else:
-		destroyed.emit()
-	return health
+		destroyed.emit(hurtbox)
 
 # Utility function to convert any vector to nearest 8-direction
 func get_nearest_direction(input_dir: Vector2) -> Vector2:
@@ -63,3 +61,11 @@ func get_nearest_direction(input_dir: Vector2) -> Vector2:
 			best_direction = dir
 	
 	return best_direction
+
+func set_direction(_new_direction: Vector2) -> bool:
+	# To be overridden by child classes
+	return false
+
+func update_animation(_state: String) -> void:
+	# To be overridden by child classes
+	pass

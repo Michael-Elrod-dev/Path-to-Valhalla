@@ -1,13 +1,19 @@
 #characters/player/scripts/player.gd
 class_name Player extends Character
 
+@onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var idle_walk_sprite: Sprite2D = $Idle_Walk
 @onready var attack_sprite: Sprite2D = $Attack
+@onready var hitbox: Hitbox = $Hitbox
 
 func _ready() -> void:
+	super._ready()
 	PlayerManager.player = self
 	state_machine.initialize(self)
+	hitbox.damaged.connect(_on_hitbox_damaged)
+	destroyed.connect(_on_player_destroyed)
+	restore_health(99)
 	
 func _process(_delta: float) -> void:
 	direction = Vector2(
@@ -16,20 +22,16 @@ func _process(_delta: float) -> void:
 		).normalized()
 
 func set_direction(_new_direction: Vector2 = Vector2.ZERO) -> bool:
-	# If no parameter passed, use the instance direction
 	var dir_to_set = _new_direction if _new_direction != Vector2.ZERO else direction
-	
 	if dir_to_set == Vector2.ZERO:
 		return false
 	
 	var new_direction: Vector2 = get_direction(dir_to_set)
-	
 	if new_direction == cardinal_direction:
 		return false
 		
 	cardinal_direction = new_direction
 	direction_changed.emit(new_direction)
-	
 	return true
 
 # Convert input direction to one of 8 cardinal directions
@@ -61,7 +63,6 @@ func update_animation(state: String):
 	animation_player.play(state + "_" + convert_direction())
 	
 func convert_direction() -> String:
-	# Convert Vector2 direction to animation suffix
 	if cardinal_direction.is_equal_approx(Vector2(0, -1)):  # North
 		return "N"
 	elif cardinal_direction.is_equal_approx(Vector2(1, -1).normalized()):  # Northeast
@@ -80,3 +81,20 @@ func convert_direction() -> String:
 		return "NW"
 	else:
 		return "S"  # Default fallback
+
+func _on_hitbox_damaged(hurtbox: Hurtbox) -> void:
+	take_damage(hurtbox)
+
+func _on_player_destroyed(_hurtbox: Hurtbox) -> void:
+	restore_health(999)
+
+func restore_health(heal_amount: int) -> void:
+	current_health = clampi(current_health + heal_amount, 0, max_health)
+	healed.emit(heal_amount)
+
+func make_invulnerable(duration: float) -> void:
+	invulnerable = true
+	hitbox.monitoring = false
+	await get_tree().create_timer(duration).timeout
+	invulnerable = false
+	hitbox.monitoring = true

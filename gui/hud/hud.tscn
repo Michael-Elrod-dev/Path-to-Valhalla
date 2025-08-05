@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfinowdsolamc"]
+
+[ext_resource type="Script" uid="uid://md7ouqltppit" path="res://gui/scripts/healthbar.gd" id="1_4w87a"]
+[ext_resource type="Texture2D" uid="uid://cq5qpkkxrhi8e" path="res://gui/hud/Healthbars.png" id="1_34rqw"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4w87a")
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar"]
+z_index = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 74.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 1
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
+position = Vector2(49, 17)
+texture = ExtResource("1_34rqw")
+region_enabled = true
+region_rect = Rect2(155, 154, 87, 19)
