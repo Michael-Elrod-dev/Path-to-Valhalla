@@ -10,5 +10,5 @@ func _process(_delta):
 	pass
 
 func _area_entered(area : Area2D) -> void:
-	if area is Hitbox:
+	if area is Hitbox and area.owner != owner:
 		area.take_damage(self)

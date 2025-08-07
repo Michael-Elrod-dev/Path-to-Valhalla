@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://tibg0vl705c1"]
+
+[ext_resource type="PackedScene" uid="uid://bfinowdsolamc" path="res://gui/hud/hud.tscn" id="1_kkkgn"]
+[ext_resource type="Script" uid="uid://ckesta5xb4100" path="res://levels/scripts/level.gd" id="1_virnm"]
+[ext_resource type="PackedScene" uid="uid://gxkjcuk7m2b6" path="res://tile_maps/level_02.tscn" id="1_xq8hk"]
+[ext_resource type="PackedScene" uid="uid://breoamcyteuui" path="res://levels/player_spawn.tscn" id="2_keump"]
+[ext_resource type="PackedScene" uid="uid://do03pc8h2cub2" path="res://characters/enemies/slime/slime.tscn" id="4_lyu5a"]
+[ext_resource type="PackedScene" uid="uid://xhls00nnwshj" path="res://levels/level_transition.tscn" id="6_t7pa0"]
+
+[node name="02" type="Node2D"]
+script = ExtResource("1_virnm")
+
+[node name="Hud" parent="." instance=ExtResource("1_kkkgn")]
+
+[node name="Environment" parent="." instance=ExtResource("1_xq8hk")]
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("2_keump")]
+position = Vector2(47, 135)
+
+[node name="Slime" parent="." instance=ExtResource("4_lyu5a")]
+position = Vector2(196, 184)
+
+[node name="Slime2" parent="." instance=ExtResource("4_lyu5a")]
+position = Vector2(283, 87)
+
+[node name="LevelTransition" parent="." instance=ExtResource("6_t7pa0")]
+position = Vector2(480, 272)
+level = "uid://plr2jiliaycu"
+snap_to_grid = true

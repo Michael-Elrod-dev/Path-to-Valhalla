@@ -17,11 +17,11 @@ func get_combined_bounds() -> Array[Vector2]:
 	for child in get_children():
 		if child is TileMapLayer:
 			var layer = child as TileMapLayer
-			var used_cells = layer.get_used_cells()
 			
 			if layer.tile_set != null and not found_tiles:
 				tile_size = layer.tile_set.tile_size
 			
+			var used_cells = layer.get_used_cells()
 			if not used_cells.is_empty():
 				found_tiles = true
 				

@@ -15,10 +15,10 @@ var direction: Vector2 = Vector2.ZERO
 var invulnerable : bool = false
 var current_health: int = 0
 
-static var _cached_directions: Array = []
+static var cached_directions: Array = []
 static func get_eight_directions() -> Array:
-	if _cached_directions.is_empty():
-		_cached_directions = [
+	if cached_directions.is_empty():
+		cached_directions = [
 			Vector2(0, -1),     # North
 			Vector2(1, -1).normalized(),     # Northeast
 			Vector2(1, 0),      # East
@@ -28,7 +28,7 @@ static func get_eight_directions() -> Array:
 			Vector2(-1, 0),     # West
 			Vector2(-1, -1).normalized()     # Northwest
 		]
-	return _cached_directions
+	return cached_directions
 
 func _ready() -> void:
 	current_health = max_health
@@ -45,7 +45,6 @@ func take_damage(hurtbox: Hurtbox) -> void:
 	else:
 		destroyed.emit(hurtbox)
 
-# Utility function to convert any vector to nearest 8-direction
 func get_nearest_direction(input_dir: Vector2) -> Vector2:
 	if input_dir == Vector2.ZERO:
 		return Vector2.ZERO

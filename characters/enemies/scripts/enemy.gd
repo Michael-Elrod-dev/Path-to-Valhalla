@@ -12,7 +12,8 @@ func _ready() -> void:
 	super._ready()
 	direction_8 = get_eight_directions()
 	enemy_state_machine.initialize(self)
-	player = PlayerManager.player
+	if PlayerManager.player:
+		player = PlayerManager.player
 	hitbox.damaged.connect(_on_hitbox_damaged)
 
 func _process(_delta: float) -> void:

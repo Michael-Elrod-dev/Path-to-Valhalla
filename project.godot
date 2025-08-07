@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://globals/level_manager.gd"
 PlayerManager="*res://globals/player_manager.gd"
+Hud="*res://gui/hud/hud.tscn"
+SceneTransition="*res://gui/scene_transition/scene_transition.tscn"
 
 [display]
 

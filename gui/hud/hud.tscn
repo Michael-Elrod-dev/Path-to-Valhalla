@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq5qpkkxrhi8e" path="res://gui/hud/Healthbars.png" id="1_34rqw"]
 
 [node name="Hud" type="CanvasLayer"]
+layer = 2
 
 [node name="HealthBar" type="Control" parent="."]
 layout_mode = 3
