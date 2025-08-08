@@ -1,0 +1,1 @@
+Bright realm of the light elves, ruled by Freyr

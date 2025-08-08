@@ -1,0 +1,1 @@
+Realm of the Vanir gods associated with fertility and wisdom

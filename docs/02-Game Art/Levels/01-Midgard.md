@@ -1,0 +1,1 @@
+The human world, surrounded by an ocean with the World Serpent

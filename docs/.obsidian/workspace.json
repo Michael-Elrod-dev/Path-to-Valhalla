@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "2c3c9bec80c5c2ad",
+    "type": "split",
+    "children": [
+      {
+        "id": "46fd95e20b655788",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6fc1fe2ae3643db0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02-Game Art/Design Overview.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Design Overview"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "071df51f7d9658b8",
+    "type": "split",
+    "children": [
+      {
+        "id": "ee303f3d36415a59",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ecb24459ff2d6a9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9d5509ffbfbcd50d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ca916ad1cda982da",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 232.5
+  },
+  "right": {
+    "id": "c453a2fc741266ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "2bf5a082684d0422",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb2e2126bca399fe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02-Game Art/Design Overview.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Design Overview"
+            }
+          },
+          {
+            "id": "7c430562b9d0849e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Development Log/Day 1 (7-24-25).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Day 1 (7-24-25)"
+            }
+          },
+          {
+            "id": "b76f41d6145ce3e8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1c7f32e15f4f3c0a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Development Log/Day 1 (7-24-25).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Day 1 (7-24-25)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "6fc1fe2ae3643db0",
+  "lastOpenFiles": [
+    "00-Templates/Boss Visual Design.md",
+    "01-Game Overview/Game Overview.md",
+    "01-Game Overview/Learning Resources.md",
+    "Resources & Research/Engine Comparison.md",
+    "02-Game Art/Design Overview.md",
+    "03-Game Mechanics/Mechanics Overview.md",
+    "01-Game Overview",
+    "02-Game Art/Weapons/Main Hand/Bow & Arrow.md",
+    "02-Game Art/Weapons/Actives/Shield Bash.md",
+    "02-Game Art/Weapons/Main Hand/Spear.md",
+    "02-Game Art/Weapons/Main Hand/Dual One-Handed Axes.md",
+    "03-Game Mechanics/Player Character.md",
+    "03-Game Mechanics/Core Mechanics.md",
+    "02-Game Art/Weapons/Actives/Rune Trap.md",
+    "03-Game Mechanics/Weapons/Actives/Berserker Rage.md",
+    "02-Game Art/Bosses/Völundr.md",
+    "02-Game Art/Bosses/Surtr.md",
+    "02-Game Art/Bosses/Odin.md",
+    "02-Game Art/Bosses/Ljósálfgard.md",
+    "02-Game Art/Bosses/Kvasir.md",
+    "02-Game Art/Bosses/Jörmungandr.md",
+    "02-Game Art/Bosses/Hrímþursar.md",
+    "02-Game Art/Bosses/Hel.md",
+    "02-Game Art/Bosses/Fenrir.md",
+    "02-Game Art/Levels/02-Alfheim.md",
+    "02-Game Art/Levels/04-Vanaheim.md",
+    "03-Game Mechanics/Levels/01-Midgard.md",
+    "03-Game Mechanics/Levels",
+    "03-Game Mechanics/Weapons/Main Hand",
+    "03-Game Mechanics/Weapons/Ultimates",
+    "03-Game Mechanics/Weapons/Passives",
+    "03-Game Mechanics/Weapons/Actives",
+    "03-Game Mechanics/Weapons",
+    "03-Game Mechanics/NPCs",
+    "02-Game Art/NPCs",
+    "03-Game Mechanics/Enemies",
+    "Untitled.canvas"
+  ]
+}
