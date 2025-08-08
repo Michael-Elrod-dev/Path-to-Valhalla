@@ -1,15 +1,15 @@
-# Trials of Odin
+# Name TBD
 
 A 2D top-down action game built with Godot Engine (v4).
 
 ## Overview
 
-Trials of Odin is a 2D top-down game featuring player combat, enemy AI, and a state machine architecture with much more to come.
+Name TBD is a 2D, top-down, viking themed, rougelite game inspired by both [Hades](https://store.steampowered.com/app/1145360/Hades/) and [Hyper Light Drifter](https://store.steampowered.com/app/257850/Hyper_Light_Drifter/).
 
 ## Project Structure
 
 ```
-Trials-of-Odin/
+game/
 ├── globals/                      # Singleton managers
 │   ├── player_manager.gd         # Global player reference
 │   └── level_manager.gd          # Scene management and level transitions
