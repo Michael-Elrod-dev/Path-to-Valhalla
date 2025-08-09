@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d38l58h1spj0c" path="res://gui/scene_transition/scene_transition.gd" id="1_yvyfr"]
 
-[sub_resource type="Animation" id="Animation_yvyfr"]
-resource_name = "deafult"
+[sub_resource type="Animation" id="Animation_jxmsx"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,8 +17,8 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jxmsx"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_yvyfr"]
+resource_name = "deafult"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

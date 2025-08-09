@@ -19,14 +19,14 @@ static var cached_directions: Array = []
 static func get_eight_directions() -> Array:
 	if cached_directions.is_empty():
 		cached_directions = [
-			Vector2(0, -1),     # North
-			Vector2(1, -1).normalized(),     # Northeast
-			Vector2(1, 0),      # East
-			Vector2(1, 1).normalized(),      # Southeast
-			Vector2(0, 1),      # South
-			Vector2(-1, 1).normalized(),     # Southwest
-			Vector2(-1, 0),     # West
-			Vector2(-1, -1).normalized()     # Northwest
+			Vector2(0, -1),              # North
+			Vector2(1, -1).normalized(), # Northeast
+			Vector2(1, 0),               # East
+			Vector2(1, 1).normalized(),  # Southeast
+			Vector2(0, 1),               # South
+			Vector2(-1, 1).normalized(), # Southwest
+			Vector2(-1, 0),              # West
+			Vector2(-1, -1).normalized() # Northwest
 		]
 	return cached_directions
 
