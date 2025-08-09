@@ -10,12 +10,12 @@
 [node name="03" type="Node2D"]
 script = ExtResource("1_hy3rs")
 
-[node name="Hud" parent="." instance=ExtResource("1_8lfve")]
-
 [node name="Environment" parent="." instance=ExtResource("1_4ksko")]
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_4nx1i")]
 position = Vector2(304, 136)
+
+[node name="Hud" parent="." instance=ExtResource("1_8lfve")]
 
 [node name="Slime" parent="." instance=ExtResource("4_w6pp3")]
 position = Vector2(197, 214)
