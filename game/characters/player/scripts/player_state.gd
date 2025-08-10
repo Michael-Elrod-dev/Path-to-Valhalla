@@ -1,4 +1,4 @@
-#characters/player/scripts/player_state.gd
+# characters/player/scripts/player_state.gd
 class_name PlayerState extends State
 
 static var player: Player

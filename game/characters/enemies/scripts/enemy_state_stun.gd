@@ -1,4 +1,4 @@
-#characters/enemies/scripts/enemy_state_stun.gd
+# characters/enemies/scripts/enemy_state_stun.gd
 class_name EnemyStateStun extends EnemyState
 
 @export var animation_name: String = "stun"

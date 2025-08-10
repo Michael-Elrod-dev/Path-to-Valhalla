@@ -35,11 +35,9 @@ func update_health_bar() -> void:
 	var player = PlayerManager.player
 	if not player or not progress_bar:
 		return
-	
 	progress_bar.max_value = player.max_health
 	progress_bar.value = player.current_health
 	
-	# Color changes
 	var health_percentage = float(player.current_health) / float(player.max_health)
 	if health_percentage > 0.66:
 		progress_bar.modulate = Color.GREEN

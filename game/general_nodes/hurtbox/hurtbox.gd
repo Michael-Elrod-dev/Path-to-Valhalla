@@ -1,4 +1,4 @@
-#general_nodes/hurtbox/hurtbox.gd
+# general_nodes/hurtbox/hurtbox.gd
 class_name Hurtbox extends Area2D
 
 @export var damage : int = 1

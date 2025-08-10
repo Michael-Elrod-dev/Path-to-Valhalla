@@ -1,4 +1,4 @@
-#characters/enemies/scripts/enemy_state_wander.gd
+# characters/enemies/scripts/enemy_state_wander.gd
 class_name EnemyStateWander extends EnemyState
 
 @export var animation_name : String = "walk"

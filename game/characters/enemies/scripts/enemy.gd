@@ -1,4 +1,4 @@
-#characters/enemies/scripts/enemy.gd
+# characters/enemies/scripts/enemy.gd
 class_name Enemy extends Character
 
 @onready var sprite: Sprite2D = $Sprite2D
@@ -24,6 +24,7 @@ func set_direction(new_direction : Vector2) -> bool:
 	if direction == Vector2.ZERO:
 		return false
 	
+	# For animation purposes, snap to nearest 8-direction
 	var best_direction = get_nearest_direction(direction)
 	if best_direction == cardinal_direction:
 		return false
@@ -31,6 +32,7 @@ func set_direction(new_direction : Vector2) -> bool:
 	cardinal_direction = best_direction
 	direction_changed.emit(best_direction)
 	
+	# Update sprite facing
 	if cardinal_direction.x < 0:  # Any left-facing direction
 		sprite.scale.x = -1
 	elif cardinal_direction.x > 0:  # Any right-facing direction
@@ -43,22 +45,22 @@ func update_animation(state : String) -> void:
 	animation_player.play(state + "_" + animation_direction())
 
 func animation_direction() -> String:
-	# Map 8 directions to 4 animation directions
-	# Pure cardinal directions
-	if cardinal_direction.is_equal_approx(Vector2(0, 1)):  # South
-		return "down"
-	elif cardinal_direction.is_equal_approx(Vector2(0, -1)):  # North
-		return "up"
-	elif cardinal_direction.is_equal_approx(Vector2(1, 0)) or cardinal_direction.is_equal_approx(Vector2(-1, 0)):  # East or West
-		return "side"
+	var result = ""
 	
-	# Diagonal directions - check y component for up/down bias
+	if cardinal_direction.is_equal_approx(Vector2(0, 1)):  # South
+		result = "down"
+	elif cardinal_direction.is_equal_approx(Vector2(0, -1)):  # North
+		result = "up"
+	elif cardinal_direction.is_equal_approx(Vector2(1, 0)) or cardinal_direction.is_equal_approx(Vector2(-1, 0)):  # East or West
+		result = "side"
 	elif cardinal_direction.y < 0:  # Northeast or Northwest
-		return "up"
+		result = "up"
 	elif cardinal_direction.y > 0:  # Southeast or Southwest
-		return "down"
+		result = "down"
 	else:
-		return "down"  # fallback
+		result = "down"
+		
+	return result
 
 func _on_hitbox_damaged(hurtbox: Hurtbox) -> void:
 	take_damage(hurtbox)

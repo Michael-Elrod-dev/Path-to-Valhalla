@@ -1,3 +1,4 @@
+# gui/pause_menu/pause_menu.gd
 extends CanvasLayer
 
 @onready var vbox_container: VBoxContainer = $VBoxContainer

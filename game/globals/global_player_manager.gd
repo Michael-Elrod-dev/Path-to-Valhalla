@@ -1,4 +1,4 @@
-#globals/player_manager.gd
+# globals/global_player_manager.gd
 extends Node
 
 const PLAYER = preload("res://characters/player/player.tscn")

@@ -1,4 +1,4 @@
-#state_machines/state.gd
+# general_nodes/state_machines/state.gd
 class_name State extends Node
 
 func initialize() -> void:

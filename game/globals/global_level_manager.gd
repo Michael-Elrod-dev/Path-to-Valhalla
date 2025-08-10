@@ -1,4 +1,4 @@
-#globals/level_manager.gd
+# globals/global_level_manager.gd
 extends Node
 
 signal level_load_started

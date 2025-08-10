@@ -1,4 +1,4 @@
-#characters/character.gd
+# characters/character.gd
 class_name Character extends CharacterBody2D
 
 @export var max_health: int = 0

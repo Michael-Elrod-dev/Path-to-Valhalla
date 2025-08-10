@@ -1,3 +1,4 @@
+# globals/global_resource_manager.gd
 extends Node
 
 var resource_definitions: Dictionary = {}

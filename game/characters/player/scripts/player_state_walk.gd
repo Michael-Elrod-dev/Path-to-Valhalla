@@ -1,4 +1,4 @@
-#characters/player/scripts/player_state_walk.gd
+# characters/player/scripts/player_state_walk.gd
 class_name StateWalk extends PlayerState
 
 @onready var idle: State = $"../Idle"

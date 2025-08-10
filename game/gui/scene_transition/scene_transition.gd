@@ -1,3 +1,4 @@
+# gui/scene_transition/scene_transition.gd
 extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $Control/AnimationPlayer

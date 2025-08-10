@@ -1,4 +1,4 @@
-#characters/player/scripts/player_state_attack.gd
+# characters/player/scripts/player_state_attack.gd
 class_name StateAttack extends PlayerState
 
 @onready var walk: State = $"../Walk"
@@ -12,11 +12,19 @@ class_name StateAttack extends PlayerState
 @export_range(1, 20, 0.5) var decelerate_speed : float = 5.0
 
 var attacking : bool = false
+var attack_direction: Vector2
 
 func enter() -> void:
+	var mouse_pos = player.get_global_mouse_position()
+	var direction_to_mouse = (mouse_pos - player.global_position).normalized()
+	attack_direction = player.get_nearest_direction(direction_to_mouse)
+	player.cardinal_direction = attack_direction
+
 	player.idle_walk_sprite.visible = false
 	player.attack_sprite.visible = true
 	player.update_animation("attack")
+	player.get_node("Interactions").update_direction(attack_direction)
+
 	animation_player.animation_finished.connect(end_attack)
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.8, 1.1)
@@ -33,6 +41,9 @@ func exit() -> void:
 	animation_player.animation_finished.disconnect(end_attack)
 	attacking = false
 	hurtbox.monitoring = false
+
+	if player.direction != Vector2.ZERO:
+		player.set_direction(player.direction)
 	
 func process(delta: float) -> State:
 	player.velocity -= player.velocity * decelerate_speed * delta

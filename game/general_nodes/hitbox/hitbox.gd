@@ -1,4 +1,4 @@
-#general_nodes/hitbox/hitbox.gd
+# general_nodes/hitbox/hitbox.gd
 class_name Hitbox extends Area2D
 
 signal damaged(hurtbox : Hurtbox)

@@ -1,4 +1,4 @@
-#characters/player/scripts/player_interactions.gd
+# characters/player/scripts/player_interactions.gd
 class_name Interactions extends Node2D
 
 @onready var player: Player = $".."

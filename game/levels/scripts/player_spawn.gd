@@ -1,3 +1,4 @@
+# levels/scripts/player_spawn.gd
 extends Node2D
 
 

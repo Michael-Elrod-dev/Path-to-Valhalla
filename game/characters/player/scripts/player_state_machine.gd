@@ -1,4 +1,4 @@
-#characters/player/scripts/player_state_machine.gd
+# characters/player/scripts/player_state_machine.gd
 class_name PlayerStateMachine extends StateMachine
 
 func _unhandled_input(event: InputEvent) -> void:

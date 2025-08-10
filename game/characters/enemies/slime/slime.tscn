@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://do03pc8h2cub2"]
+[gd_scene load_steps=34 format=3 uid="uid://do03pc8h2cub2"]
 
 [ext_resource type="Script" uid="uid://by3s8b0lx23fg" path="res://characters/enemies/scripts/enemy.gd" id="1_57eei"]
 [ext_resource type="Texture2D" uid="uid://dm05fcd2aouyq" path="res://characters/enemies/slime/sprites/Slime.png" id="1_j284o"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c0b3qos4bb0ii" path="res://characters/enemies/scripts/enemy_state_idle.gd" id="5_u2l51"]
 [ext_resource type="Script" uid="uid://bdotwt10ih7a3" path="res://characters/enemies/scripts/enemy_state_wander.gd" id="6_2ui2u"]
 [ext_resource type="AudioStream" uid="uid://ke76d7qe1g04" path="res://characters/enemies/slime/audio/hit_00.wav" id="6_knvw0"]
+[ext_resource type="Script" uid="uid://dlvjjcvdfl7um" path="res://characters/enemies/scripts/enemy_state_chase.gd" id="8_8ivsi"]
 [ext_resource type="PackedScene" uid="uid://yh5g02tn68j" path="res://general_nodes/hurtbox/hurtbox.tscn" id="8_kag0e"]
 [ext_resource type="Script" uid="uid://bev0iwithlty7" path="res://characters/enemies/scripts/enemy_state_stun.gd" id="10_v3fw7"]
 [ext_resource type="PackedScene" uid="uid://62paws8grpg4" path="res://general_nodes/hitbox/hitbox.tscn" id="10_yuirh"]
@@ -809,13 +810,16 @@ autoplay = "idle_down"
 [node name="EnemyStateMachine" type="Node" parent="."]
 script = ExtResource("4_u2l51")
 
+[node name="Chase" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_8ivsi")
+chase_speed = 75.0
+
 [node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_u2l51")
 next_state = NodePath("../Wander")
 
 [node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("6_2ui2u")
-animation_name = null
 walk_speed = 30.0
 state_animation_duration = 0.7
 state_cycles_min = null
@@ -824,7 +828,7 @@ next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("10_v3fw7")
-next_state = NodePath("../Idle")
+next_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("11_0oddt")

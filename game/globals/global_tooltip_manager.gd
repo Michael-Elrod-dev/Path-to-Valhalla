@@ -1,3 +1,4 @@
+# globals/global_tooltip_manager.gd
 extends Node
 
 var current_tooltip: Tooltip

@@ -1,4 +1,4 @@
-#state_machines/state_machine.gd
+# general_nodes/state_machines/state_machine.gd
 class_name StateMachine extends Node
 
 var states : Array[State]

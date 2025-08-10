@@ -1,3 +1,4 @@
+# resources/scripts/resource_display.gd
 class_name ResourceDisplay extends VBoxContainer
 
 @export var resources_to_display: Array[String] = ["gems"]
@@ -24,7 +25,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	update_all_displays()
 
-# Rest of your functions stay the same...
 func create_all_resource_displays() -> void:
 	for child in get_children():
 		child.queue_free()

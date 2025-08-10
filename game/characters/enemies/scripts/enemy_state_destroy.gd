@@ -1,4 +1,4 @@
-#characters/enemies/scripts/enemy_state_destroy.gd
+# characters/enemies/scripts/enemy_state_destroy.gd
 class_name EnemyStateDestroy extends EnemyState
 
 @export var animation_name : String = "destroy"

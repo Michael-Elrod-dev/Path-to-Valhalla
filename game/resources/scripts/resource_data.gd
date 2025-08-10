@@ -1,3 +1,4 @@
+# resources/scripts/resource_data.gd
 class_name ResourceData extends Resource
 
 @export var name: String = ""

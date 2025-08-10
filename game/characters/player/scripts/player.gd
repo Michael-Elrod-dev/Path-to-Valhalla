@@ -1,4 +1,4 @@
-#characters/player/scripts/player.gd
+# characters/player/scripts/player.gd
 class_name Player extends Character
 
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
@@ -16,7 +16,7 @@ func _ready() -> void:
 	restore_health(99)
 	
 func _unhandled_input(_event: InputEvent) -> void:
-	# Only update when input actually changes
+	# Only update when input changes
 	var new_direction = Vector2(
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
@@ -59,7 +59,7 @@ func convert_direction() -> String:
 	elif cardinal_direction.is_equal_approx(Vector2(-1, -1).normalized()):  # Northwest
 		return "NW"
 	else:
-		return "S"  # Default fallback
+		return "S"
 
 func _on_hitbox_damaged(hurtbox: Hurtbox) -> void:
 	take_damage(hurtbox)

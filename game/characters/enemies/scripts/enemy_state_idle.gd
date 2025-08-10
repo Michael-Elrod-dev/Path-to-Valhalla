@@ -1,4 +1,4 @@
-#characters/enemies/scripts/enemy_state_idle.gd
+# characters/enemies/scripts/enemy_state_idle.gd
 class_name EnemyStateIdle extends EnemyState
 
 @export var animation_name : String = "idle"

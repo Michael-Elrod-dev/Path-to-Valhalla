@@ -1,4 +1,4 @@
-#characters/enemies/scripts/enemy_state_machine.gd
+# characters/enemies/scripts/enemy_state_machine.gd
 class_name EnemyStateMachine extends StateMachine
 
 func initialize(enemy : Enemy) -> void:
@@ -15,6 +15,14 @@ func initialize(enemy : Enemy) -> void:
 		
 	if states.size() == 0:
 		return
-		
-	change_state(states[0])
+	
+	var chase_state = null
+	for state in states:
+		if state is EnemyStateChase:
+			chase_state = state
+			break
+	
+	# Use chase state as default, otherwise use first state
+	var initial_state = chase_state if chase_state else states[0]
+	change_state(initial_state)
 	process_mode = Node.PROCESS_MODE_INHERIT

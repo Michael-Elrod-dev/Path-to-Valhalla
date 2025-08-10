@@ -1,4 +1,4 @@
-#characters/player/scripts/player_state_stun.gd
+# characters/player/scripts/player_state_stun.gd
 class_name StateStun extends PlayerState
 
 @export var animation_name: String = "stun"

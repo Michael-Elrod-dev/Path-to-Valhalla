@@ -1,3 +1,4 @@
+# globals/global_save_manager.gd
 extends Node
 
 const SAVE_PATH = "user://"

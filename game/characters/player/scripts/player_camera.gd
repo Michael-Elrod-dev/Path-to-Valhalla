@@ -1,4 +1,4 @@
-#characters/player/scripts/player_camera.gd
+# characters/player/scripts/player_camera.gd
 class_name Camera extends Camera2D
 
 func _ready():
