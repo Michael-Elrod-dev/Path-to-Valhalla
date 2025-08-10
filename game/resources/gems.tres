@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ResourceData" load_steps=4 format=3 uid="uid://lnnaedsy23mb"]
+
+[ext_resource type="Script" uid="uid://d308tr16tip1m" path="res://resources/scripts/resource_data.gd" id="1_sohxl"]
+[ext_resource type="Texture2D" uid="uid://ndaujtm1lfoq" path="res://resources/sprites/items.png" id="2_em6nt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdrxg"]
+atlas = ExtResource("2_em6nt")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_sohxl")
+name = "Gem"
+resource_id = "gems"
+description = "Valuable gems used for upgrades and purchases"
+texture = SubResource("AtlasTexture_gdrxg")
+metadata/_custom_type_script = "uid://d308tr16tip1m"

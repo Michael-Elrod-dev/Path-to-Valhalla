@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-Game Art/Design Overview.md",
+                "file": "00-Development Logs/Logs/Day 11 (8-8-25).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Design Overview"
+              "title": "Day 11 (8-8-25)"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02-Game Art/Design Overview.md",
+                "file": "00-Development Logs/Logs/Day 11 (8-8-25).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Design Overview"
+              "title": "Backlinks for Day 11 (8-8-25)"
             }
           },
           {
@@ -169,33 +169,33 @@
   },
   "active": "6fc1fe2ae3643db0",
   "lastOpenFiles": [
-    "00-Templates/Boss Visual Design.md",
+    "00-Templates/Dev Log.md",
+    "00-Development Logs/Logs/Day 11 (8-8-25).md",
+    "00-Development Logs/Logs/Day 1 (7-24-25).md",
+    "00-Development Logs/Logs/Day 2 (7-25-25).md",
+    "00-Development Logs/Logs/Day 3 (7-27-25).md",
+    "00-Development Logs/Logs/Day 4 (7-29-25).md",
+    "00-Development Logs/Logs/Day 5 (7-30-25).md",
+    "00-Development Logs/Logs/Day 6 (8-2-25).md",
+    "00-Development Logs/Logs/Day 7 (8-3-25).md",
+    "00-Development Logs/Logs/Day 8 (8-4-25).md",
+    "00-Development Logs/Logs/Day 9 (8-6-25).md",
+    "00-Development Logs/Logs/Day 10 (8-8-25).md",
+    "03-Game Mechanics/Mechanics Overview.md",
+    "03-Game Mechanics/Player Character.md",
     "01-Game Overview/Game Overview.md",
+    "02-Game Art/Design Overview.md",
+    "00-Templates/Boss Visual Design.md",
     "01-Game Overview/Learning Resources.md",
     "Resources & Research/Engine Comparison.md",
-    "02-Game Art/Design Overview.md",
-    "03-Game Mechanics/Mechanics Overview.md",
     "01-Game Overview",
     "02-Game Art/Weapons/Main Hand/Bow & Arrow.md",
     "02-Game Art/Weapons/Actives/Shield Bash.md",
     "02-Game Art/Weapons/Main Hand/Spear.md",
     "02-Game Art/Weapons/Main Hand/Dual One-Handed Axes.md",
-    "03-Game Mechanics/Player Character.md",
     "03-Game Mechanics/Core Mechanics.md",
     "02-Game Art/Weapons/Actives/Rune Trap.md",
     "03-Game Mechanics/Weapons/Actives/Berserker Rage.md",
-    "02-Game Art/Bosses/Völundr.md",
-    "02-Game Art/Bosses/Surtr.md",
-    "02-Game Art/Bosses/Odin.md",
-    "02-Game Art/Bosses/Ljósálfgard.md",
-    "02-Game Art/Bosses/Kvasir.md",
-    "02-Game Art/Bosses/Jörmungandr.md",
-    "02-Game Art/Bosses/Hrímþursar.md",
-    "02-Game Art/Bosses/Hel.md",
-    "02-Game Art/Bosses/Fenrir.md",
-    "02-Game Art/Levels/02-Alfheim.md",
-    "02-Game Art/Levels/04-Vanaheim.md",
-    "03-Game Mechanics/Levels/01-Midgard.md",
     "03-Game Mechanics/Levels",
     "03-Game Mechanics/Weapons/Main Hand",
     "03-Game Mechanics/Weapons/Ultimates",

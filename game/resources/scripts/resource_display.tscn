@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7og5ix5iafop"]
+
+[ext_resource type="Script" uid="uid://cj4dycsi5d3yk" path="res://resources/scripts/resource_display.gd" id="1_51vbm"]
+
+[node name="ResourceDisplay" type="VBoxContainer"]
+offset_right = 54.0
+offset_bottom = 26.0
+theme_override_constants/separation = 2
+script = ExtResource("1_51vbm")
+icon_size = Vector2(20, 20)
+font_size = 8

@@ -4,8 +4,10 @@ extends Node
 const PLAYER = preload("res://characters/player/player.tscn")
 var player: Player
 var player_spawned: bool = false
+var player_resources: Dictionary = {}
 
 signal player_ready(player_instance: Player)
+signal resource_changed(item_id: String, new_count: int)
 
 func _ready() -> void:
 	instantiate_player()
@@ -31,3 +33,18 @@ func set_as_parent(parent: Node2D) -> void:
 
 func unparent_player(parent: Node2D) -> void:
 	parent.remove_child(player)
+
+func add_item(item_id: String, amount: int = 1) -> void:
+	if not player_resources.has(item_id):
+		player_resources[item_id] = 0
+	
+	player_resources[item_id] += amount
+	resource_changed.emit(item_id, player_resources[item_id])
+
+func set_item_count(item_id: String, count: int) -> void:
+	player_resources[item_id] = count
+	resource_changed.emit(item_id)
+
+func get_item_count(item_id: String) -> int:
+	var count = player_resources.get(item_id, 0)
+	return count

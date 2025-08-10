@@ -8,13 +8,11 @@ signal game_saved
 var current_save: Dictionary = {
 	scene_path = "",
 	player = {
-		current_health = 1,
 		max_health = 1,
 		position_x = 0,
-		position_y = 0
-	},
-	items = [],
-	persistence = []
+		position_y = 0,
+		inventory = {}
+	}
 }
 
 func create_save() -> void:
@@ -31,20 +29,24 @@ func load_save() -> void:
 	save_file.parse(file.get_line())
 	var save_dict: Dictionary = save_file.get_data() as Dictionary
 	current_save = save_dict
+	load_inventory_data()
 	LevelManager.load_new_level(current_save.scene_path)
 	await LevelManager.level_load_started
-	PlayerManager.set_player_health(current_save.player.current_health, current_save.player.max_health)
 	await LevelManager.level_loaded
 	game_loaded.emit()
 
 func update_player_data() -> void:
 	var player: Player = PlayerManager.player
-	current_save.player.current_health = player.current_health
 	current_save.player.max_health = player.max_health
 	current_save.player.position_x = player.global_position.x
 	current_save.player.position_y = player.global_position.y
-	current_save.player.items = []
-	current_save.player.persistence = []
+	current_save.player.inventory = PlayerManager.player_resources.duplicate()
+
+func load_inventory_data() -> void:
+	if current_save.player.has("inventory"):
+		PlayerManager.player_resources = current_save.player.inventory.duplicate()
+		for item_id in PlayerManager.player_resources:
+			PlayerManager.resource_changed.emit(item_id, PlayerManager.player_resources[item_id])
 
 func update_scene_path() -> void:
 	var scene_path: String = ""

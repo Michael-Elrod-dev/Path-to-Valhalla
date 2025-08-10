@@ -43,6 +43,6 @@ func on_save() -> void:
 func on_load() -> void:
 	if is_paused == false:
 		return
+	unpause_game()
 	SaveManager.load_save()
 	await LevelManager.level_load_started
-	unpause_game()

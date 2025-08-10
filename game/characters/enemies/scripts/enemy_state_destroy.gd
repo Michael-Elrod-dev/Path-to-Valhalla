@@ -5,6 +5,10 @@ class_name EnemyStateDestroy extends EnemyState
 @export var knockback_speed : float = 200.0
 @export var decelerate_speed : float = 10.0
 
+@export var drop_item_id: String = "gems"
+@export var drop_amount: int = 1
+@export var drop_chance: float = 1.0
+
 var damage_position: Vector2
 var direction : Vector2
 
@@ -19,6 +23,7 @@ func enter() -> void:
 	enemy.update_animation(animation_name)
 	enemy.animation_player.animation_finished.connect(on_animation_finished)
 	disable_hurtbox()
+	drop_resources()
 
 func exit() -> void:
 	pass
@@ -41,3 +46,7 @@ func disable_hurtbox() -> void:
 	var hurtbox: Hurtbox = enemy.get_node_or_null("Hurtbox")
 	if hurtbox:
 		hurtbox.monitoring = false
+
+func drop_resources() -> void:
+	if randf() <= drop_chance:
+		PlayerManager.add_item(drop_item_id, drop_amount)

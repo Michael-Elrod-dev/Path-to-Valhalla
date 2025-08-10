@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8s4380fji7p3"]
+
+[ext_resource type="Script" uid="uid://bqksmjspof2ef" path="res://tooltips/scripts/tooltip.gd" id="1_23tow"]
+
+[node name="Tooltip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_23tow")
+tooltip_width = 100
+offset_from_mouse = Vector2(5, -10)
+title_font_size = 10
+desc_font_size = 8
+desc_color = Color(0.650129, 0.650128, 0.650128, 1)
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Content" type="VBoxContainer" parent="Background"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Background/Content"]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Background/Content"]
+layout_mode = 2

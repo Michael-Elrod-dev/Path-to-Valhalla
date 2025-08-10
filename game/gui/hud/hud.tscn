@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfinowdsolamc"]
+[gd_scene load_steps=4 format=3 uid="uid://bfinowdsolamc"]
 
 [ext_resource type="Script" uid="uid://md7ouqltppit" path="res://gui/scripts/healthbar.gd" id="1_4w87a"]
 [ext_resource type="Texture2D" uid="uid://cq5qpkkxrhi8e" path="res://gui/hud/Healthbars.png" id="1_34rqw"]
+[ext_resource type="PackedScene" uid="uid://b7og5ix5iafop" path="res://resources/scripts/resource_display.tscn" id="3_rllpj"]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 2
@@ -31,3 +32,9 @@ position = Vector2(49, 17)
 texture = ExtResource("1_34rqw")
 region_enabled = true
 region_rect = Rect2(155, 154, 87, 19)
+
+[node name="ResourceDisplay" parent="." instance=ExtResource("3_rllpj")]
+offset_left = 3.0
+offset_top = 24.0
+offset_right = 50.0
+offset_bottom = 36.0

@@ -26,7 +26,7 @@ func _ready() -> void:
 		return
 	body_entered.connect(player_entered)
 
-func player_entered(player: Node2D) -> void:
+func player_entered(_player: Node2D) -> void:
 	LevelManager.load_new_level(level)
 
 func _update_area() -> void:

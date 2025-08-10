@@ -17,12 +17,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SceneTransition="*res://gui/scene_transition/scene_transition.tscn"
 LevelManager="*res://globals/global_level_manager.gd"
 Hud="*res://gui/hud/hud.tscn"
 PlayerManager="*res://globals/global_player_manager.gd"
-SceneTransition="*res://gui/scene_transition/scene_transition.tscn"
 PauseMenu="*res://gui/pause_menu/pause_menu.tscn"
 SaveManager="*res://globals/global_save_manager.gd"
+ResourceManager="*res://globals/global_resource_manager.gd"
+TooltipManager="*res://globals/global_tooltip_manager.gd"
 
 [display]
 
