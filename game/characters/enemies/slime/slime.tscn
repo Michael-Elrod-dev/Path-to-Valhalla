@@ -822,8 +822,6 @@ next_state = NodePath("../Wander")
 script = ExtResource("6_2ui2u")
 walk_speed = 30.0
 state_animation_duration = 0.7
-state_cycles_min = null
-state_cycles_max = null
 next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]

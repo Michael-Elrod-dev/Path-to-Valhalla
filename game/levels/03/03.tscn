@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://plr2jiliaycu"]
+[gd_scene load_steps=8 format=3 uid="uid://plr2jiliaycu"]
 
 [ext_resource type="PackedScene" uid="uid://djgeym2c5drqt" path="res://tile_maps/level_03.tscn" id="1_4ksko"]
 [ext_resource type="PackedScene" uid="uid://bfinowdsolamc" path="res://gui/hud/hud.tscn" id="1_8lfve"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://breoamcyteuui" path="res://levels/player_spawn.tscn" id="2_4nx1i"]
 [ext_resource type="PackedScene" uid="uid://do03pc8h2cub2" path="res://characters/enemies/slime/slime.tscn" id="4_w6pp3"]
 [ext_resource type="PackedScene" uid="uid://xhls00nnwshj" path="res://levels/level_transition.tscn" id="6_ksx55"]
+[ext_resource type="PackedScene" uid="uid://drb728wqv3rw6" path="res://levels/enemy_spawner.tscn" id="7_n55ry"]
 
 [node name="03" type="Node2D"]
 script = ExtResource("1_hy3rs")
@@ -30,3 +31,9 @@ position = Vector2(300, 89)
 position = Vector2(64, 144)
 level = "uid://knvbr7tdes1r"
 snap_to_grid = true
+
+[node name="EnemySpawner" parent="." instance=ExtResource("7_n55ry")]
+enemy_scenes = Array[PackedScene]([ExtResource("4_w6pp3")])
+total_enemies = 30
+max_enemies_alive = 12
+spawn_rate = 0.5

@@ -5,4 +5,4 @@
 ### Resources Used
 - 
 ### Next Session Goals
--
+- 
