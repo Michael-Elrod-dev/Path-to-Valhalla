@@ -1,12 +1,12 @@
 ## Player
 - [[02-Game Art/Player Character|Player Character]]
 ## NPCs
-- [[02-Game Art/NPCs/Muginn & Huninn|Muginn & Huninn]]
+- [[Muninn & Huginn|Muninn & Huginn]]
 ## Weapons
 - #### Main Weapons
 	- [[02-Game Art/Weapons/Main Hand/Dual One-Handed Axes|Dual One-Handed Axes]]
-	- [[02-Game Art/Weapons/Main Hand/Spear|Spear]]
-	- [[02-Game Art/Weapons/Main Hand/Bow & Arrow|Bow & Arrow]]
+	- [[02-Game Art/Weapons/Main Hand/Spear & Shield|Spear & Shield]]
+	- [[02-Game Art/Weapons/Main Hand/Bow & Quiver|Bow & Quiver]]
 - #### Actives
 	- [[02-Game Art/Weapons/Actives/Berserker Rage|Berserker Rage]]
 	- [[02-Game Art/Weapons/Actives/Rune Trap|Rune Trap]]

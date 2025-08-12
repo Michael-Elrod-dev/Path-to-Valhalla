@@ -5,8 +5,8 @@
 ## Weapons
 - #### Main Weapons
 	- [[03-Game Mechanics/Weapons/Main Hand/Dual One-Handed Axes|Dual One-Handed Axes]]
-	- [[03-Game Mechanics/Weapons/Main Hand/Spear|Spear]]
-	- [[03-Game Mechanics/Weapons/Main Hand/Bow & Arrow|Bow & Arrow]]
+	- [[03-Game Mechanics/Weapons/Main Hand/Spear & Shield|Spear & Shield]]
+	- [[03-Game Mechanics/Weapons/Main Hand/Bow & Quiver|Bow & Quiver]]
 - #### Actives
 	- [[03-Game Mechanics/Weapons/Actives/Berserker Rage|Berserker Rage]]
 	- [[03-Game Mechanics/Weapons/Actives/Rune Trap|Rune Trap]]
