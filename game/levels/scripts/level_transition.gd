@@ -1,25 +1,27 @@
 # levels/scripts/level_transition.gd
 @tool
-class_name LevelTransition extends Area2D
+class_name LevelTransition
+extends Area2D
 
-enum SIDE {LEFT, RIGHT, TOP ,BOTTOM}
+enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
 @export_file("*.tscn") var level
 @export_category("Collision Area Settings")
-@export_range(1, 12, 1, "or_greater") var size: int = 1 : 
+@export_range(1, 12, 1, "or_greater") var size: int = 1:
 	set(value):
 		size = value
 		_update_area()
-@export var side: SIDE = SIDE.LEFT: 
+@export var side: SIDE = SIDE.LEFT:
 	set(value):
 		side = value
 		_update_area()
-@export var snap_to_grid: bool = false: 
+@export var snap_to_grid: bool = false:
 	set(value):
 		snap_to_grid = value
 		_snap_to_grid()
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
 
 func _ready() -> void:
 	_update_area()
@@ -27,8 +29,10 @@ func _ready() -> void:
 		return
 	body_entered.connect(player_entered)
 
+
 func player_entered(_player: Node2D) -> void:
 	LevelManager.load_new_level(level)
+
 
 func _update_area() -> void:
 	var new_rect: Vector2 = Vector2(32, 32)
@@ -52,7 +56,8 @@ func _update_area() -> void:
 		
 	collision_shape.shape.size = new_rect
 	collision_shape.position = new_position
-	
+
+
 func _snap_to_grid() -> void:
-	position.x = round(position.x / 16) * 16
-	position.y = round(position.y / 16) * 16
+	position.x = round(position.x / 16.0) * 16.0
+	position.y = round(position.y / 16.0) * 16.0

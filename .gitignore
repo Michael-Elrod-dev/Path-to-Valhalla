@@ -18,6 +18,7 @@ data_*/
 mono_crash.*.json
 
 # Assets
+Images/
 *.import
 *.wav
 *.png

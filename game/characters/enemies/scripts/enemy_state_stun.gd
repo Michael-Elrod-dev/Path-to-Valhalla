@@ -1,5 +1,6 @@
 # characters/enemies/scripts/enemy_state_stun.gd
-class_name EnemyStateStun extends EnemyState
+class_name EnemyStateStun
+extends EnemyState
 
 @export var animation_name: String = "stun"
 @export var knockback_speed: float = 200.0
@@ -12,8 +13,10 @@ var damage_position: Vector2
 var direction: Vector2
 var animation_finished: bool = false
 
+
 func initialize() -> void:
 	enemy.damaged.connect(on_enemy_damaged)
+
 
 func enter() -> void:
 	#enemy.invulnerable = true
@@ -24,9 +27,11 @@ func enter() -> void:
 	enemy.update_animation(animation_name)
 	enemy.animation_player.animation_finished.connect(on_animation_finished)
 
+
 func exit() -> void:
 	enemy.invulnerable = false
 	enemy.animation_player.animation_finished.disconnect(on_animation_finished)
+
 
 func process(delta: float) -> EnemyState:
 	if animation_finished == true:
@@ -34,12 +39,15 @@ func process(delta: float) -> EnemyState:
 	enemy.velocity -= enemy.velocity * decelerate_speed * delta
 	return null
 
+
 func physics(_delta: float) -> EnemyState:
 	return null
+
 
 func on_enemy_damaged(hurtbox: Hurtbox) -> void:
 	damage_position = hurtbox.global_position
 	state_machine.change_state(self)
+
 
 func on_animation_finished(_animation: String) -> void:
 	animation_finished = true

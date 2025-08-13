@@ -1,9 +1,6 @@
 # tooltips/scripts/tooltip.gd
-class_name Tooltip extends Control
-
-@onready var title_label: Label = $Background/Content/Title
-@onready var desc_label: Label = $Background/Content/Description
-@onready var background: Control = $Background
+class_name Tooltip
+extends Control
 
 @export_group("Layout")
 @export var tooltip_width: int = 200
@@ -17,9 +14,15 @@ class_name Tooltip extends Control
 @export var desc_font_size: int = 14
 @export var desc_color: Color = Color(0.9, 0.9, 0.9)
 
+@onready var title_label: Label = $Background/Content/Title
+@onready var desc_label: Label = $Background/Content/Description
+@onready var background: Control = $Background
+
+
 func _ready() -> void:
 	visible = false
 	call_deferred("setup_tooltip")
+
 
 func setup_tooltip() -> void:
 	custom_minimum_size.x = tooltip_width
@@ -38,12 +41,14 @@ func setup_tooltip() -> void:
 		desc_label.add_theme_font_size_override("font_size", desc_font_size)
 		desc_label.add_theme_color_override("font_color", desc_color)
 
+
 func show_tooltip(title: String, description: String, mouse_pos: Vector2) -> void:
 	title_label.text = title
 	desc_label.text = description
 	await get_tree().process_frame
 	global_position = mouse_pos + offset_from_mouse
 	visible = true
+
 
 func hide_tooltip() -> void:
 	visible = false

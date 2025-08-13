@@ -1,5 +1,6 @@
 # characters/character.gd
-class_name Character extends CharacterBody2D
+class_name Character
+extends CharacterBody2D
 
 @export var max_health: int = 0
 
@@ -10,12 +11,14 @@ signal healed(health: int)
 signal damaged(hurtbox: Hurtbox)
 signal destroyed(hurtbox: Hurtbox)
 
+static var cached_directions: Array = []
+
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
-var invulnerable : bool = false
+var invulnerable: bool = false
 var current_health: int = 0
 
-static var cached_directions: Array = []
+
 static func get_eight_directions() -> Array:
 	if cached_directions.is_empty():
 		cached_directions = [
@@ -30,11 +33,14 @@ static func get_eight_directions() -> Array:
 		]
 	return cached_directions
 
+
 func _ready() -> void:
 	current_health = max_health
 
+
 func _physics_process(_delta):
 	move_and_slide()
+
 
 func take_damage(hurtbox: Hurtbox) -> void:
 	if invulnerable:
@@ -44,6 +50,7 @@ func take_damage(hurtbox: Hurtbox) -> void:
 		damaged.emit(hurtbox)
 	else:
 		destroyed.emit(hurtbox)
+
 
 func get_nearest_direction(input_dir: Vector2) -> Vector2:
 	if input_dir == Vector2.ZERO:
@@ -61,9 +68,11 @@ func get_nearest_direction(input_dir: Vector2) -> Vector2:
 	
 	return best_direction
 
+
 func set_direction(_new_direction: Vector2) -> bool:
 	# To be overridden by child classes
 	return false
+
 
 func update_animation(_state: String) -> void:
 	# To be overridden by child classes

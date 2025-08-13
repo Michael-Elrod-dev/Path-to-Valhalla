@@ -16,4 +16,4 @@
 - Washed out greens and browns
 ### References
 ![[download 1.jpg]]
-![[god-of-war-ragnarok-kratos-and-mystic-gateway-1.avif]]
+![[god-of-war-ragnarok-kratos-and-mystic-gateway-1.jpg]]

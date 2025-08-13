@@ -1,20 +1,25 @@
 # globals/global_save_manager.gd
 extends Node
 
-const SAVE_PATH = "user://"
-
 signal game_loaded
 signal game_saved
 
+const SAVE_PATH = "user://"
+
 var current_save: Dictionary = {
-	scene_path = "",
-	player = {
-		max_health = 1,
-		position_x = 0,
-		position_y = 0,
-		inventory = {}
+	"scene_path": "",
+	"player": {
+		"max_health": 1,
+		"position_x": 0,
+		"position_y": 0,
+		"inventory": {}
 	}
 }
+
+
+func _ready() -> void:
+	pass
+
 
 func create_save() -> void:
 	update_player_data()
@@ -23,6 +28,7 @@ func create_save() -> void:
 	var save_file = JSON.stringify(current_save)
 	file.store_line(save_file)
 	game_saved.emit()
+
 
 func load_save() -> void:
 	var file := FileAccess.open(SAVE_PATH + "save.sav", FileAccess.READ)
@@ -36,6 +42,7 @@ func load_save() -> void:
 	await LevelManager.level_loaded
 	game_loaded.emit()
 
+
 func update_player_data() -> void:
 	var player: Player = PlayerManager.player
 	current_save.player.max_health = player.max_health
@@ -43,11 +50,16 @@ func update_player_data() -> void:
 	current_save.player.position_y = player.global_position.y
 	current_save.player.inventory = PlayerManager.player_resources.duplicate()
 
+
 func load_inventory_data() -> void:
 	if current_save.player.has("inventory"):
 		PlayerManager.player_resources = current_save.player.inventory.duplicate()
 		for item_id in PlayerManager.player_resources:
-			PlayerManager.resource_changed.emit(item_id, PlayerManager.player_resources[item_id])
+			PlayerManager.resource_changed.emit(
+					item_id, 
+					PlayerManager.player_resources[item_id]
+			)
+
 
 func update_scene_path() -> void:
 	var scene_path: String = ""

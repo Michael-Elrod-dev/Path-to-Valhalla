@@ -4,8 +4,10 @@ extends Node
 var resource_definitions: Dictionary = {}
 var resource_directory: String = "res://resources/"
 
+
 func _ready() -> void:
 	load_all_resources()
+
 
 func load_all_resources() -> void:
 	var dir = DirAccess.open(resource_directory)
@@ -20,8 +22,10 @@ func load_all_resources() -> void:
 		file_name = dir.get_next()
 	dir.list_dir_end()
 
+
 func get_resource_data(resource_id: String) -> ResourceData:
 	return resource_definitions.get(resource_id, null)
+
 
 func get_all_resource_ids() -> Array[String]:
 	var result: Array[String] = []

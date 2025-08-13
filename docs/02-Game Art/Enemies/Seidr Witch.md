@@ -9,8 +9,9 @@
 - Pale skin
 - Antler horn on their head
 - Runic marking on visible body parts
+- They hold a gnarled, twisted, wooden staff in one hand that opens at the top with a yellow glowing gem
 ### Mechanics
 - [[03-Game Mechanics/Enemies/Seidr Witch|Seidr Witch]]
 ### Image References
 ![[witch.jpg]]
-![[witch1.jpg]]
+![[witch1.jpg]]![[witchstaff.avif]]

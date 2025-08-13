@@ -1,15 +1,19 @@
 # characters/player/scripts/player_interactions.gd
-class_name Interactions extends Node2D
+class_name Interactions
+extends Node2D
 
 @onready var player: Player = $".."
+
 
 func _ready():
 	player.direction_changed.connect(update_direction)
 	update_direction(player.cardinal_direction)
-	
+
+
 func update_direction(new_direction: Vector2) -> void:
 	var angle = get_rotation_for_direction(new_direction)
 	rotation_degrees = angle
+
 
 func get_rotation_for_direction(direction: Vector2) -> float:
 	# North (UP)

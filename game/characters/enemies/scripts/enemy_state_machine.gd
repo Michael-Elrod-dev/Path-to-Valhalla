@@ -1,7 +1,9 @@
 # characters/enemies/scripts/enemy_state_machine.gd
-class_name EnemyStateMachine extends StateMachine
+class_name EnemyStateMachine
+extends StateMachine
 
-func initialize(enemy : Enemy) -> void:
+
+func initialize(enemy: Enemy) -> void:
 	states = []
 	
 	for child in get_children():

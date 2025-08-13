@@ -3,6 +3,7 @@ extends Node
 
 var current_tooltip: Tooltip
 
+
 func _ready() -> void:
 	await get_tree().process_frame
 	current_tooltip = preload("res://tooltips/tooltip.tscn").instantiate()
@@ -12,14 +13,17 @@ func _ready() -> void:
 	get_tree().root.add_child(ui_layer)
 	ui_layer.add_child(current_tooltip)
 
+
 func show_tooltip(title: String, description: String) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()
 	show_tooltip_at_position(title, description, mouse_pos)
+
 
 func show_tooltip_at_position(title: String, description: String, pos: Vector2) -> void:
 	if not current_tooltip:
 		return
 	current_tooltip.show_tooltip(title, description, pos)
+
 
 func hide_tooltip() -> void:
 	if current_tooltip:

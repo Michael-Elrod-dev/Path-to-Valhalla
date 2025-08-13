@@ -2,8 +2,9 @@
 - The first level in the game
 ### Visual Design
 - Modeled after the Legend of Zelda: Breath of the Wild base environment
-- A sunlit green, grassy environment with sparse trees and potentially water for edge of map boundaries and obstacles
+- A sunlit green, grassy environment with sparse trees and potentially water for edge of map boundaries and obstacles as rivers
 - Flowers and boulders as land accessories
+- Rune stone monuments scattered around in special places
 ### Visual Effects
 - Faint white lines showing wind blowing
 - Faint clouds of fog
@@ -22,4 +23,4 @@
 - [[02-Game Art/Bosses/Jörmungandr|Jörmungandr]]
 ### References
 ![[zelda1.jpg]]
-![[zelda.jpg]]
+![[zelda.jpg]]![[Valheim_Runestone_Meadows.jpg]]

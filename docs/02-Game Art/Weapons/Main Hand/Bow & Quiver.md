@@ -15,6 +15,8 @@
 - Quiver
 	- Length of characters back
 ### References
-![[FOXBow50Horsebow30-40lbs.webp]]
-![[Bow_of_Apollo.webp]]
-![[01.jpg]]
+![[bo1.jpg]]
+
+![[bow.jpg]]
+
+![[quiver.jpg]]

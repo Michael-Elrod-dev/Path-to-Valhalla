@@ -9,4 +9,4 @@
 - They provide thee player with information and advice on how to play the game
 - They also provide some comic relief and banter with the player
 ### References
-![[odins-treasures_blog_huginn-muninn.webp]]
+![[ravens.jpg]]

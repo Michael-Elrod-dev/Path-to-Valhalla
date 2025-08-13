@@ -1,5 +1,6 @@
 # resources/scripts/resource_display.gd
-class_name ResourceDisplay extends VBoxContainer
+class_name ResourceDisplay
+extends VBoxContainer
 
 @export var resources_to_display: Array[String] = ["gems"]
 
@@ -18,6 +19,7 @@ class_name ResourceDisplay extends VBoxContainer
 
 var resource_rows: Dictionary = {}
 
+
 func _ready() -> void:
 	add_theme_constant_override("separation", resource_spacing)	
 	create_all_resource_displays()
@@ -25,12 +27,14 @@ func _ready() -> void:
 	await get_tree().process_frame
 	update_all_displays()
 
+
 func create_all_resource_displays() -> void:
 	for child in get_children():
 		child.queue_free()
 	resource_rows.clear()
 	for resource_id in resources_to_display:
 		create_resource_row(resource_id)
+
 
 func create_resource_row(resource_id: String) -> void:
 	var resource_data = ResourceManager.get_resource_data(resource_id)
@@ -73,17 +77,11 @@ func create_resource_row(resource_id: String) -> void:
 	h_box.mouse_entered.connect(_on_resource_hover_entered.bind(resource_id))
 	h_box.mouse_exited.connect(_on_resource_hover_exited)
 
-func _on_resource_changed(item_id: String, new_count: int) -> void:
-	if not resource_rows.has(item_id):
-		return
-	
-	var row = resource_rows[item_id]
-	var current_text = row.count_label.text
-	var new_text = str(new_count)
-	
-	if current_text != new_text:
-		row.count_label.text = new_text
-		update_count_width(row.count_label)
+
+func update_all_displays() -> void:
+	for resource_id in resources_to_display:
+		update_resource_display(resource_id)
+
 
 func update_resource_display(resource_id: String) -> void:
 	if not resource_rows.has(resource_id):
@@ -98,22 +96,39 @@ func update_resource_display(resource_id: String) -> void:
 		row.count_label.text = new_text
 		update_count_width(row.count_label)
 
+
 func update_count_width(count_label: Label) -> void:
 	var font = count_label.get_theme_font("font")
 	var font_size_actual = count_label.get_theme_font_size("font_size")
-	var text_width = font.get_string_size(count_label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size_actual).x
+	var text_width = font.get_string_size(
+			count_label.text, 
+			HORIZONTAL_ALIGNMENT_LEFT, 
+			-1, 
+			font_size_actual
+	).x
 	
 	var new_width = max(min_width, text_width + padding * 2)
 	count_label.custom_minimum_size.x = new_width
 
-func update_all_displays() -> void:
-	for resource_id in resources_to_display:
-		update_resource_display(resource_id)
+
+func _on_resource_changed(item_id: String, new_count: int) -> void:
+	if not resource_rows.has(item_id):
+		return
+	
+	var row = resource_rows[item_id]
+	var current_text = row.count_label.text
+	var new_text = str(new_count)
+	
+	if current_text != new_text:
+		row.count_label.text = new_text
+		update_count_width(row.count_label)
+
 
 func _on_resource_hover_entered(resource_id: String) -> void:
 	if resource_rows.has(resource_id):
 		var resource_data = resource_rows[resource_id].resource_data
 		TooltipManager.show_tooltip(resource_data.name, resource_data.description)
+
 
 func _on_resource_hover_exited() -> void:
 	TooltipManager.hide_tooltip()

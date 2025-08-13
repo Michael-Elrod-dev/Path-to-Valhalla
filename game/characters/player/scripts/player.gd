@@ -1,11 +1,13 @@
 # characters/player/scripts/player.gd
-class_name Player extends Character
+class_name Player
+extends Character
 
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var idle_walk_sprite: Sprite2D = $Idle_Walk
 @onready var attack_sprite: Sprite2D = $Attack
 @onready var hitbox: Hitbox = $Hitbox
+
 
 func _ready() -> void:
 	super._ready()
@@ -14,7 +16,8 @@ func _ready() -> void:
 	hitbox.damaged.connect(_on_hitbox_damaged)
 	destroyed.connect(_on_player_destroyed)
 	restore_health(99)
-	
+
+
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only update when input changes
 	var new_direction = Vector2(
@@ -24,6 +27,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 	if new_direction != direction:
 		direction = new_direction.normalized()
+
 
 func set_direction(_new_direction: Vector2 = Vector2.ZERO) -> bool:
 	var dir_to_set = _new_direction if _new_direction != Vector2.ZERO else direction
@@ -38,9 +42,11 @@ func set_direction(_new_direction: Vector2 = Vector2.ZERO) -> bool:
 	direction_changed.emit(new_direction)
 	return true
 
+
 func update_animation(state: String):
 	animation_player.play(state + "_" + convert_direction())
-	
+
+
 func convert_direction() -> String:
 	if cardinal_direction.is_equal_approx(Vector2(0, -1)):  # North
 		return "N"
@@ -61,15 +67,11 @@ func convert_direction() -> String:
 	else:
 		return "S"
 
-func _on_hitbox_damaged(hurtbox: Hurtbox) -> void:
-	take_damage(hurtbox)
-
-func _on_player_destroyed(_hurtbox: Hurtbox) -> void:
-	restore_health(999)
 
 func restore_health(heal_amount: int) -> void:
 	current_health = clampi(current_health + heal_amount, 0, max_health)
 	healed.emit(heal_amount)
+
 
 func make_invulnerable(duration: float) -> void:
 	invulnerable = true
@@ -77,3 +79,11 @@ func make_invulnerable(duration: float) -> void:
 	await get_tree().create_timer(duration).timeout
 	invulnerable = false
 	hitbox.monitoring = true
+
+
+func _on_hitbox_damaged(hurtbox: Hurtbox) -> void:
+	take_damage(hurtbox)
+
+
+func _on_player_destroyed(_hurtbox: Hurtbox) -> void:
+	restore_health(999)

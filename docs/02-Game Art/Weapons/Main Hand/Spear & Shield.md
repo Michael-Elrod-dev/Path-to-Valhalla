@@ -15,6 +15,8 @@
 - A mid sized shield less than half the characters height
 - A long spear about one head taller than the character
 ### References
-![[71Q-Is+xlJL._UY1000_.jpg]]
-![[Rundschildpflege-Geheimnisse-der-Wikinger-enthuellt.jpg]]
+![[shield1.jpg]]
+
 ![[viking-spear-75in-larp.jpg]]
+
+![[shield.jpg]]

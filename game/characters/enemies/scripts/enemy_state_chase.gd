@@ -1,5 +1,6 @@
 # characters/enemies/scripts/enemy_state_chase.gd
-class_name EnemyStateChase extends EnemyState
+class_name EnemyStateChase
+extends EnemyState
 
 @export var animation_name: String = "walk"
 @export var chase_speed: float = 40.0
@@ -8,8 +9,10 @@ class_name EnemyStateChase extends EnemyState
 var direction_timer: float = 0.0
 var target_direction: Vector2
 
+
 func initialize() -> void:
 	pass
+
 
 func enter() -> void:
 	direction_timer = 0.0
@@ -18,8 +21,10 @@ func enter() -> void:
 		enemy.set_direction(target_direction)
 		enemy.update_animation(animation_name)
 
+
 func exit() -> void:
 	pass
+
 
 func process(delta: float) -> EnemyState:
 	direction_timer -= delta
@@ -43,8 +48,10 @@ func process(delta: float) -> EnemyState:
 	
 	return null
 
+
 func physics(_delta: float) -> EnemyState:
 	return null
+
 
 func update_target_direction() -> void:
 	if enemy.player:

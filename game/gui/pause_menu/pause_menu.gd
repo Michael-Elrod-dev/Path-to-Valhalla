@@ -5,12 +5,14 @@ extends CanvasLayer
 @onready var button_save: Button = $VBoxContainer/button_save
 @onready var button_load: Button = $VBoxContainer/button_load
 
-var is_paused:bool = false
+var is_paused: bool = false
+
 
 func _ready() -> void:
 	unpause_game()
 	button_save.pressed.connect(on_save)
 	button_load.pressed.connect(on_load)
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
@@ -20,6 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			unpause_game()
 		get_viewport().set_input_as_handled()
 
+
 func pause_game() -> void:
 	get_tree().paused = true
 	visible = true
@@ -28,6 +31,7 @@ func pause_game() -> void:
 	if vbox_container:
 		vbox_container.mouse_filter = Control.MOUSE_FILTER_STOP
 
+
 func unpause_game() -> void:
 	get_tree().paused = false
 	visible = false
@@ -35,11 +39,13 @@ func unpause_game() -> void:
 	if vbox_container:
 		vbox_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+
 func on_save() -> void:
 	if is_paused == false:
 		return
 	SaveManager.create_save()
 	unpause_game()
+
 
 func on_load() -> void:
 	if is_paused == false:

@@ -1,7 +1,9 @@
 # gui/scripts/healthbar.gd
-class_name HealthBar extends Control
+class_name HealthBar
+extends Control
 
 @onready var progress_bar: ProgressBar = $ProgressBar
+
 
 func _ready() -> void:
 	if PlayerManager.player:
@@ -9,6 +11,7 @@ func _ready() -> void:
 	else:
 		await get_tree().process_frame
 		connect_to_player()
+
 
 func connect_to_player() -> void:
 	var player = PlayerManager.player
@@ -22,14 +25,6 @@ func connect_to_player() -> void:
 	player.healed.connect(_on_player_healed)
 	update_health_bar()
 
-func _on_player_damaged(_hurtbox: Hurtbox) -> void:
-	update_health_bar()
-
-func _on_player_destroyed(_hurtbox: Hurtbox) -> void:
-	update_health_bar()
-
-func _on_player_healed(_new_health: int) -> void:
-	update_health_bar()
 
 func update_health_bar() -> void:
 	var player = PlayerManager.player
@@ -45,3 +40,15 @@ func update_health_bar() -> void:
 		progress_bar.modulate = Color.YELLOW
 	else:
 		progress_bar.modulate = Color.RED
+
+
+func _on_player_damaged(_hurtbox: Hurtbox) -> void:
+	update_health_bar()
+
+
+func _on_player_destroyed(_hurtbox: Hurtbox) -> void:
+	update_health_bar()
+
+
+func _on_player_healed(_new_health: int) -> void:
+	update_health_bar()

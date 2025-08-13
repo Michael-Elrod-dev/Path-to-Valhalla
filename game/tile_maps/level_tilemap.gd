@@ -1,16 +1,19 @@
 # tile_maps/level_tilemap.gd
 extends Node2D
 
+
 func _ready():
 	call_deferred("calculate_bounds")
+
 
 func calculate_bounds():
 	var all_bounds = get_combined_bounds()
 	LevelManager.change_bounds(all_bounds)
 
+
 func get_combined_bounds() -> Array[Vector2]:
-	var min_pos = Vector2i(2147483647, 2147483647)
-	var max_pos = Vector2i(-2147483648, -2147483648)
+	var min_pos = Vector2i(2_147_483_647, 2_147_483_647)
+	var max_pos = Vector2i(-2_147_483_648, -2_147_483_648)
 	var found_tiles = false
 	var tile_size = Vector2i(32, 32)
 	

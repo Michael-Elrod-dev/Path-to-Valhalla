@@ -1,7 +1,9 @@
 # general_nodes/hitbox/hitbox.gd
-class_name Hitbox extends Area2D
+class_name Hitbox
+extends Area2D
 
-signal damaged(hurtbox : Hurtbox)
+signal damaged(hurtbox: Hurtbox)
 
-func take_damage(hurtbox : Hurtbox) -> void:
+
+func take_damage(hurtbox: Hurtbox) -> void:
 	damaged.emit(hurtbox)

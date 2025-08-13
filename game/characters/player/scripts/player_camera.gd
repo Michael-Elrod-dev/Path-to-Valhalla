@@ -1,11 +1,14 @@
 # characters/player/scripts/player_camera.gd
-class_name Camera extends Camera2D
+class_name Camera
+extends Camera2D
+
 
 func _ready():
 	LevelManager.bounds_changed.connect(update_limits)
 	update_limits(LevelManager.current_bounds)
-	
-func update_limits(bounds : Array[Vector2]) -> void:
+
+
+func update_limits(bounds: Array[Vector2]) -> void:
 	if bounds == []:
 		return
 	limit_left = int(bounds[0].x)

@@ -15,5 +15,6 @@
 ### Size
 - 32x32
 ### References
-![[Viking_gif 1.gif]]![[Temple-Shave-with-Long-Hair_hymngrooming.jpg]]
-![[yvss2uen2nid1.jpg]]
+![[Viking_gif.jpg]]
+![[Temple-Shave-with-Long-Hair_hymngrooming.jpg]]
+![[viking.jpg]]

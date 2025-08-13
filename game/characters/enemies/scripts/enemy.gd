@@ -1,12 +1,14 @@
 # characters/enemies/scripts/enemy.gd
-class_name Enemy extends Character
+class_name Enemy
+extends Character
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
 
-var player : Player
+var player: Player
 var direction_8: Array
+
 
 func _ready() -> void:
 	super._ready()
@@ -16,10 +18,12 @@ func _ready() -> void:
 		player = PlayerManager.player
 	hitbox.damaged.connect(_on_hitbox_damaged)
 
+
 func _process(_delta: float) -> void:
 	pass
 
-func set_direction(new_direction : Vector2) -> bool:
+
+func set_direction(new_direction: Vector2) -> bool:
 	direction = new_direction
 	if direction == Vector2.ZERO:
 		return false
@@ -41,8 +45,10 @@ func set_direction(new_direction : Vector2) -> bool:
 	
 	return true
 
-func update_animation(state : String) -> void:
+
+func update_animation(state: String) -> void:
 	animation_player.play(state + "_" + animation_direction())
+
 
 func animation_direction() -> String:
 	var result = ""
@@ -51,7 +57,8 @@ func animation_direction() -> String:
 		result = "down"
 	elif cardinal_direction.is_equal_approx(Vector2(0, -1)):  # North
 		result = "up"
-	elif cardinal_direction.is_equal_approx(Vector2(1, 0)) or cardinal_direction.is_equal_approx(Vector2(-1, 0)):  # East or West
+	elif (cardinal_direction.is_equal_approx(Vector2(1, 0)) 
+			or cardinal_direction.is_equal_approx(Vector2(-1, 0))):  # East or West
 		result = "side"
 	elif cardinal_direction.y < 0:  # Northeast or Northwest
 		result = "up"
@@ -61,6 +68,7 @@ func animation_direction() -> String:
 		result = "down"
 		
 	return result
+
 
 func _on_hitbox_damaged(hurtbox: Hurtbox) -> void:
 	take_damage(hurtbox)

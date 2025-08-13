@@ -1,5 +1,9 @@
 # characters/player/scripts/player_state_attack.gd
-class_name StateAttack extends PlayerState
+class_name StateAttack
+extends PlayerState
+
+@export var attack_sound = AudioStream
+@export_range(1, 20, 0.5) var decelerate_speed: float = 5.0
 
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
@@ -8,11 +12,9 @@ class_name StateAttack extends PlayerState
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 
-@export var attack_sound = AudioStream
-@export_range(1, 20, 0.5) var decelerate_speed : float = 5.0
-
-var attacking : bool = false
+var attacking: bool = false
 var attack_direction: Vector2
+
 
 func enter() -> void:
 	var mouse_pos = player.get_global_mouse_position()
@@ -35,6 +37,7 @@ func enter() -> void:
 	if attacking:
 		hurtbox.monitoring = true
 
+
 func exit() -> void:
 	player.idle_walk_sprite.visible = true
 	player.attack_sprite.visible = false
@@ -44,7 +47,8 @@ func exit() -> void:
 
 	if player.direction != Vector2.ZERO:
 		player.set_direction(player.direction)
-	
+
+
 func process(delta: float) -> State:
 	player.velocity -= player.velocity * decelerate_speed * delta
 	if attacking == false:
@@ -52,12 +56,15 @@ func process(delta: float) -> State:
 			return idle
 		return walk
 	return null
-	
+
+
 func physics(_delta: float) -> State:
 	return null
-	
+
+
 func handle_input(_event: InputEvent) -> State:
 	return null
+
 
 func end_attack(_newAnimName) -> void:
 	attacking = false

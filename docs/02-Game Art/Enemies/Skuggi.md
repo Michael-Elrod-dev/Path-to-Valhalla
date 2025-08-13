@@ -10,5 +10,5 @@
 ### Mechanics
 - [[03-Game Mechanics/Enemies/Skuggi|Skuggi]]
 ### Image References
-![[Shadow1.webp]]
+![[Shadow1.jpg]]
 ![[shadow.jpg]]
