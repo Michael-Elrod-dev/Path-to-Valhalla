@@ -1,6 +1,11 @@
 # resources/scripts/resource_display.gd
 class_name ResourceDisplay
 extends VBoxContainer
+## UI component for displaying player resource counts.
+##
+## Shows icons and counts for specified resources like gems or coins.
+## Automatically updates when player resources change and provides
+## hover tooltips with resource descriptions.
 
 @export var resources_to_display: Array[String] = ["gems"]
 

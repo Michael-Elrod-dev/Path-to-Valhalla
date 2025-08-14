@@ -1,5 +1,10 @@
 # globals/global_save_manager.gd
 extends Node
+## Manages game save data and persistence.
+##
+## Handles saving and loading player data including position, health,
+## inventory, and current scene. Saves are stored in the user:// directory
+## as JSON files.
 
 signal game_loaded
 signal game_saved

@@ -1,5 +1,10 @@
 # globals/global_resource_manager.gd
 extends Node
+## Loads and manages all game resource definitions.
+##
+## Automatically loads all ResourceData files from the resources folder
+## on startup. Provides access to resource data by ID for tooltips,
+## displays, and game logic.
 
 var resource_definitions: Dictionary = {}
 var resource_directory: String = "res://resources/"

@@ -1,6 +1,11 @@
 # characters/player/scripts/player_state_walk.gd
 class_name StateWalk
 extends PlayerState
+## Player walking state for movement.
+##
+## Handles directional movement at configured speed. Updates walking
+## animations based on direction and transitions to idle when stopped
+## or attack when attacking.
 
 @export var move_speed: float = 100.0
 

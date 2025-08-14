@@ -1,5 +1,9 @@
 # globals/global_tooltip_manager.gd
 extends Node
+## Global manager for displaying tooltips in the UI.
+##
+## Creates and manages a single tooltip instance that can be shown
+## at any position with custom title and description text.
 
 var current_tooltip: Tooltip
 

@@ -1,5 +1,9 @@
 # gui/scene_transition/scene_transition.gd
 extends CanvasLayer
+## Manages fade transitions between scenes.
+##
+## Provides fade in/out animations for smooth scene changes.
+## Used by the LevelManager for level transitions.
 
 @onready var animation_player: AnimationPlayer = $Control/AnimationPlayer
 

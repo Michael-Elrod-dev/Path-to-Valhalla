@@ -1,5 +1,10 @@
 # globals/global_level_manager.gd
 extends Node
+## Manages level loading and transitions.
+##
+## Handles scene changes with fade transitions, tracks level boundaries
+## for camera limits, and emits signals for level lifecycle events.
+## Coordinates with SceneTransition for smooth visual transitions.
 
 signal level_load_started
 signal level_loaded

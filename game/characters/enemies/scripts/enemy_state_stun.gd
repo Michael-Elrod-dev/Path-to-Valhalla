@@ -1,6 +1,11 @@
 # characters/enemies/scripts/enemy_state_stun.gd
 class_name EnemyStateStun
 extends EnemyState
+## Enemy stun state when taking damage.
+##
+## Applies knockback away from damage source and plays stun animation.
+## Temporarily disables enemy actions before returning to configured
+## next state.
 
 @export var animation_name: String = "stun"
 @export var knockback_speed: float = 200.0

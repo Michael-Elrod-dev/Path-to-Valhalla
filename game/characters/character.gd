@@ -1,6 +1,11 @@
 # characters/character.gd
 class_name Character
 extends CharacterBody2D
+## Base class for all game characters (player and enemies).
+##
+## Provides common functionality including health management, damage handling,
+## 8-directional movement, and animation system. Emits signals for damage,
+## healing, and destruction events.
 
 @export var max_health: int = 0
 

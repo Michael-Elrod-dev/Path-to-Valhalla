@@ -1,5 +1,10 @@
 # globals/global_player_manager.gd
 extends Node
+## Global manager for player instance and resources.
+##
+## Maintains the persistent player object across scenes, manages
+## player inventory/resources, and handles player spawning. Emits
+## signals when resources change.
 
 signal player_ready(player_instance: Player)
 signal resource_changed(item_id: String, new_count: int)

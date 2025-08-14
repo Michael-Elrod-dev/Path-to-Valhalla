@@ -1,6 +1,11 @@
 # tooltips/scripts/tooltip.gd
 class_name Tooltip
 extends Control
+## Customizable tooltip UI element.
+##
+## Displays title and description text near the mouse cursor.
+## Supports custom fonts, colors, and sizing. Auto-wraps long
+## descriptions to fit within configured width.
 
 @export_group("Layout")
 @export var tooltip_width: int = 200

@@ -1,6 +1,11 @@
 # characters/enemies/scripts/enemy_state_destroy.gd
 class_name EnemyStateDestroy
 extends EnemyState
+## Enemy destruction state when health reaches zero.
+##
+## Handles death animation, knockback effect, and resource drops.
+## Disables the hurtbox and queues the enemy for deletion after
+## the animation completes.
 
 @export var animation_name: String = "destroy"
 @export var knockback_speed: float = 200.0

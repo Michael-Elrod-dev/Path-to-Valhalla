@@ -1,6 +1,11 @@
 # characters/player/scripts/player.gd
 class_name Player
 extends Character
+## Main player character controller.
+##
+## Handles player input, animations, state management, and health.
+## Uses a state machine for different actions like idle, walk, and attack.
+## Manages both 8-directional movement and sprite animations.
 
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine

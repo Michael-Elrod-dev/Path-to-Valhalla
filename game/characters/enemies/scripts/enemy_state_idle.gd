@@ -1,6 +1,11 @@
 # characters/enemies/scripts/enemy_state_idle.gd
 class_name EnemyStateIdle
 extends EnemyState
+## Enemy idle state for passive behavior.
+##
+## Waits for a random duration between min and max time before
+## transitioning to the configured next state. Stops all movement
+## during idle period.
 
 @export var animation_name: String = "idle"
 

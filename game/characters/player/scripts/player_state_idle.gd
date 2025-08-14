@@ -1,6 +1,10 @@
 # characters/player/scripts/player_state_idle.gd
 class_name StateIdle
 extends PlayerState
+## Player idle state when not moving or performing actions.
+##
+## Transitions to walk state on movement input or attack state
+## on attack input. Shows idle animation for current facing direction.
 
 @onready var walk: PlayerState = $"../Walk"
 @onready var attack: PlayerState = $"../Attack"

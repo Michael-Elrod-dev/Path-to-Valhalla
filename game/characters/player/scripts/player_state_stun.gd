@@ -1,6 +1,10 @@
 # characters/player/scripts/player_state_stun.gd
 class_name StateStun
 extends PlayerState
+## Player stun state when taking damage.
+##
+## Applies knockback, plays damage animation, and grants temporary
+## invulnerability. Automatically returns to idle state after animation.
 
 @export var animation_name: String = "stun"
 @export var knockback_speed: float = 200.0

@@ -1,6 +1,11 @@
 # characters/enemies/scripts/enemy_state_chase.gd
 class_name EnemyStateChase
 extends EnemyState
+## Enemy state for pursuing the player.
+##
+## Continuously moves toward the player with free 360-degree movement.
+## Updates facing direction for animations while maintaining smooth
+## pathfinding toward the target.
 
 @export var animation_name: String = "walk"
 @export var chase_speed: float = 40.0

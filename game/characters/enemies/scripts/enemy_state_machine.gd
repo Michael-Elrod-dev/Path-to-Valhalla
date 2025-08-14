@@ -1,7 +1,10 @@
 # characters/enemies/scripts/enemy_state_machine.gd
 class_name EnemyStateMachine
 extends StateMachine
-
+## State machine controller for enemy AI states.
+##
+## Initializes all child states and defaults to chase state if available.
+## Manages state transitions for enemy behavior patterns.
 
 func initialize(enemy: Enemy) -> void:
 	states = []

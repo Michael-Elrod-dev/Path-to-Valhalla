@@ -2,6 +2,11 @@
 @tool
 class_name LevelTransition
 extends Area2D
+## Triggers level transitions when the player enters the area.
+##
+## Place at level boundaries to load new scenes. Configure the target
+## level path and collision area size/side in the inspector. Supports
+## snap to grid for easier level design.
 
 enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 

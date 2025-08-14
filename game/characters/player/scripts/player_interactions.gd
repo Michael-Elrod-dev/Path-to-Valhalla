@@ -1,6 +1,10 @@
 # characters/player/scripts/player_interactions.gd
 class_name Interactions
 extends Node2D
+## Manages the player's interaction direction indicator.
+##
+## Rotates to match the player's facing direction, useful for
+## showing where attacks or interactions will occur.
 
 @onready var player: Player = $".."
 

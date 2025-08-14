@@ -1,6 +1,10 @@
 # general_nodes/state_machines/state_machine.gd
 class_name StateMachine
 extends Node
+## Generic state machine for managing state transitions.
+##
+## Handles state changes and delegates process/physics updates to
+## the current state. Tracks current and previous states.
 
 var states: Array[State]
 var previous_state: State

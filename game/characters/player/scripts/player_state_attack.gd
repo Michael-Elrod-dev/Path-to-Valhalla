@@ -1,6 +1,11 @@
 # characters/player/scripts/player_state_attack.gd
 class_name StateAttack
 extends PlayerState
+## Player attack state for melee combat.
+##
+## Handles attack animations, hurtbox activation, and mouse-directed
+## attacking. Applies deceleration during the attack and returns to
+## idle or walk state when complete.
 
 @export var attack_sound = AudioStream
 @export_range(1, 20, 0.5) var decelerate_speed: float = 5.0

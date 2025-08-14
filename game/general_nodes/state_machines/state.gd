@@ -1,7 +1,11 @@
 # general_nodes/state_machines/state.gd
 class_name State
 extends Node
-
+## Base class for state machine states.
+##
+## Provides virtual methods for state lifecycle (enter/exit) and
+## update loops (process/physics). Subclasses should override these
+## methods to implement specific state behavior.
 
 func initialize() -> void:
 	pass

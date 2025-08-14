@@ -1,6 +1,11 @@
 # characters/enemies/scripts/enemy_state_wander.gd
 class_name EnemyStateWander
 extends EnemyState
+## Enemy wandering state for random movement.
+##
+## Moves in a random direction for a configured duration. Supports
+## both 4-directional and 8-directional movement patterns. Transitions
+## to next state after completing wander cycles.
 
 @export var animation_name: String = "walk"
 @export var walk_speed: float = 20.0

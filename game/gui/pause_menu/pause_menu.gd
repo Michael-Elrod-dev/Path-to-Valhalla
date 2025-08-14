@@ -1,5 +1,9 @@
 # gui/pause_menu/pause_menu.gd
 extends CanvasLayer
+## In-game pause menu with save/load functionality.
+##
+## Pauses the game tree when activated with the pause action.
+## Provides options to save the current game state or load a previous save.
 
 @onready var vbox_container: VBoxContainer = $VBoxContainer
 @onready var button_save: Button = $VBoxContainer/button_save

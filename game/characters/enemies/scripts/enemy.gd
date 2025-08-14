@@ -1,6 +1,11 @@
 # characters/enemies/scripts/enemy.gd
 class_name Enemy
 extends Character
+## Base class for enemy characters.
+##
+## Extends Character with enemy-specific behavior including AI state machine,
+## sprite flipping based on direction, and automatic player targeting.
+## Handles damage and destruction through connected hitbox.
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var hitbox: Hitbox = $Hitbox

@@ -1,7 +1,10 @@
 # characters/player/scripts/player_state_machine.gd
 class_name PlayerStateMachine
 extends StateMachine
-
+## State machine controller for player states.
+##
+## Manages state transitions and handles unhandled input events.
+## Initializes all child states and sets up shared player reference.
 
 func _unhandled_input(event: InputEvent) -> void:
 	change_state(current_state.handle_input(event))

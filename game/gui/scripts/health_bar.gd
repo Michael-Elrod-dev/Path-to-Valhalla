@@ -1,6 +1,11 @@
 # gui/scripts/healthbar.gd
 class_name HealthBar
 extends Control
+## UI element that displays the player's current health.
+##
+## Automatically connects to the player when ready and updates
+## the progress bar visual when the player takes damage or heals.
+## Changes color based on health percentage (green/yellow/red).
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 

@@ -1,6 +1,9 @@
 # tile_maps/level_tilemap.gd
 extends Node2D
-
+## Calculates and sets level boundaries based on tilemap layers.
+##
+## Scans all child TileMapLayer nodes to determine the combined bounds
+## of the level and reports them to the LevelManager for camera limits.
 
 func _ready():
 	call_deferred("calculate_bounds")

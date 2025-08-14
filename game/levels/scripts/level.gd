@@ -1,6 +1,11 @@
 # levels/scripts/level.gd
 class_name Level
 extends Node2D
+## Base class for game levels.
+##
+## Manages enemy spawning, tracks manually placed enemies, and handles
+## player positioning. Automatically enables y-sorting and connects to
+## the level manager for scene transitions.
 
 @onready var enemy_spawner: EnemySpawner = $EnemySpawner
 

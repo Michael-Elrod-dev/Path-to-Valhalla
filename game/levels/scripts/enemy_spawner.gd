@@ -1,6 +1,11 @@
 # levels/scripts/enemy_spawner.gd
 class_name EnemySpawner
 extends Node2D
+## Manages dynamic enemy spawning in levels.
+##
+## Spawns enemies outside camera view at configured intervals. Tracks total
+## enemies spawned and maximum alive. Works with manually placed enemies and
+## respects level boundaries.
 
 @export_category("Spawn Settings")
 @export var enemy_scenes: Array[PackedScene] = []
