@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 232.5
+    "width": 200
   },
   "right": {
     "id": "c453a2fc741266ca",
@@ -171,6 +171,7 @@
   "active": "723f6d60adfaf5b0",
   "lastOpenFiles": [
     "00-Development Logs/Log Overview.md",
+    "00-Development Logs/Logs/Day 13 (8-11-25).md",
     "03-Game Mechanics/Enemies/Skuggi.md",
     "00-Development Logs/Artists",
     "03-Game Mechanics/Enemies/Draugr.md",
@@ -205,7 +206,6 @@
     "02-Game Art/Player Character.md",
     "Images/axe.webp",
     "Images/Viking_gif.jpg",
-    "00-Development Logs/Logs/Day 13 (8-11-25).md",
     "00-Development Logs/Logs/Day 12 (8-10-25).md",
     "Images",
     "01-Game Overview",
