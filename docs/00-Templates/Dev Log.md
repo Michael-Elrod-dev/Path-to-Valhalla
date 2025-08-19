@@ -1,6 +1,6 @@
-### Accomplished Today
+### Tasks Completed
 - 
 ### Resources Used
 - 
-### Next Session Goals
+### Next Session Notes
 - 

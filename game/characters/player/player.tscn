@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bjqqv1pt1j5i4"]
+[gd_scene load_steps=56 format=3 uid="uid://bjqqv1pt1j5i4"]
 
 [ext_resource type="Script" uid="uid://bsvqb8bdsl7cr" path="res://characters/player/scripts/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://batu1yn20sabp" path="res://characters/player/sprites/walk_idle.png" id="2_2ieo8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brrxkuimijn47" path="res://characters/player/sprites/attack_spear.png" id="4_kb6p2"]
 [ext_resource type="Script" uid="uid://d0dm63wwrtu4p" path="res://characters/player/scripts/player_state_idle.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://160xg7sg0npy" path="res://characters/player/scripts/player_state_walk.gd" id="5_g6k8r"]
+[ext_resource type="Script" uid="uid://bgjgq60tiwfau" path="res://characters/player/scripts/player_state_dash.gd" id="6_58jvb"]
 [ext_resource type="Script" uid="uid://dk0glo1dp1hn4" path="res://characters/player/scripts/player_state_attack.gd" id="7_boad6"]
 [ext_resource type="AudioStream" uid="uid://c0yyygfmye5gh" path="res://characters/player/audio/attack/swish-1.wav" id="8_rgyib"]
 [ext_resource type="Script" uid="uid://042khr3odx1m" path="res://characters/player/scripts/player_camera.gd" id="9_2ieo8"]
@@ -697,6 +698,9 @@ script = ExtResource("3_g1dw6")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_qjkh3")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("6_58jvb")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_g6k8r")

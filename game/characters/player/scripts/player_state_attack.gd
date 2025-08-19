@@ -10,6 +10,7 @@ extends PlayerState
 @export var attack_sound = AudioStream
 @export_range(1, 20, 0.5) var decelerate_speed: float = 5.0
 
+@onready var dash: StateDash = $"../Dash"
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
 @onready var attack: State = $"../Attack"
@@ -67,7 +68,7 @@ func physics(_delta: float) -> State:
 	return null
 
 
-func handle_input(_event: InputEvent) -> State:
+func handle_input(event: InputEvent) -> State:
 	return null
 
 

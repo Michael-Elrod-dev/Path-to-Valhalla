@@ -10,6 +10,7 @@ extends PlayerState
 @export var move_speed: float = 100.0
 
 @onready var idle: State = $"../Idle"
+@onready var dash: StateDash = $"../Dash"
 @onready var attack: StateAttack = $"../Attack"
 
 
@@ -38,6 +39,8 @@ func physics(_delta: float) -> State:
 
 
 func handle_input(event: InputEvent) -> State:
+	if event.is_action_pressed("dash"):
+		return dash
 	if event.is_action_pressed("attack"):
 		return attack
 	return null

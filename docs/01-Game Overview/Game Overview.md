@@ -15,6 +15,10 @@
 		- Vanaheim -> Jotenheim -> Muspelheim
 	-  **Act 3**
 		- Niflheim -> Helheim -> Asgard
+## Level Design
+- Aiming to have the maps procedurally generated for a new experience each run
+- The levels will be centered around pre-designed "rooms" whose order and connections are randomized each time
+- Each area could have a % chance of a treasure room spawning
 ## Enemies
 - **Spawning** - Enemies spawn both in predetermined locations and randomly off screen
 - **Theme** - Each realm features lore-appropriate creatures

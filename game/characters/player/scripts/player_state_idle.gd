@@ -6,6 +6,7 @@ extends PlayerState
 ## Transitions to walk state on movement input or attack state
 ## on attack input. Shows idle animation for current facing direction.
 
+@onready var dash: StateDash = $"../Dash"
 @onready var walk: PlayerState = $"../Walk"
 @onready var attack: PlayerState = $"../Attack"
 
@@ -32,6 +33,8 @@ func physics(_delta: float) -> State:
 
 
 func handle_input(event: InputEvent) -> State:
+	if event.is_action_pressed("dash"):
+		return dash
 	if event.is_action_pressed("attack"):
 		return attack
 	return null
