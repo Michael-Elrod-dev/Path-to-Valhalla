@@ -9,3 +9,5 @@
 ### Next Session Notes
 - Should probably start building out the [[00-Home]] level's mechanics with interactable tables and a portal
 - Once this skeleton exists I could build out the different collision areas for different weapon types
+### Date
+- 8-18-25
