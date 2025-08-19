@@ -7,8 +7,11 @@
 ### Resources Used
 - None
 ### Next Session Notes
-- Fix the formatting for internal link display in the website's Dev Logs
-- Should probably start building out the [[00-Home]] level's mechanics with interactable tables and a portal
-- Once this skeleton exists I could build out the different collision areas for different weapon types
+- Website
+	- Fix the formatting for internal link display in the website's Dev Logs
+	- Add new date formatting function to a util file and look for others
+- Game
+	- Should probably start building out the [[00-Home]] level's mechanics with interactable tables and a portal
+	- Once this skeleton exists I could build out the different collision areas for different weapon types
 ### Date
 - August 18, 2025
