@@ -7,7 +7,8 @@
 ### Resources Used
 - None
 ### Next Session Notes
+- Fix the formatting for internal link display in the website's Dev Logs
 - Should probably start building out the [[00-Home]] level's mechanics with interactable tables and a portal
 - Once this skeleton exists I could build out the different collision areas for different weapon types
 ### Date
-- 8-18-25
+- August 18, 2025
