@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfinowdsolamc"]
 
 [ext_resource type="Script" uid="uid://md7ouqltppit" path="res://gui/scripts/health_bar.gd" id="1_4w87a"]
-[ext_resource type="Texture2D" uid="uid://cq5qpkkxrhi8e" path="res://gui/hud/Healthbars.png" id="1_34rqw"]
+[ext_resource type="Texture2D" uid="uid://cq5qpkkxrhi8e" path="res://gui/hud/sprites/Healthbars.png" id="1_34rqw"]
 [ext_resource type="PackedScene" uid="uid://b7og5ix5iafop" path="res://resources/scripts/resource_display.tscn" id="3_rllpj"]
 
 [node name="Hud" type="CanvasLayer"]

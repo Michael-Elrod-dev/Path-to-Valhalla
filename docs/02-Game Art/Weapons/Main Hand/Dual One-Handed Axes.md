@@ -3,7 +3,7 @@
 ### Description
 - Two identical one-handed axes modeled after the classic bearded axe used by Vikings and featured in God of War
 ### Color Scheme
-- Brown handle
+- Brown handle, no wraps
 - Grey/Silver blade
 ### Size
 - Roughly half the characters height

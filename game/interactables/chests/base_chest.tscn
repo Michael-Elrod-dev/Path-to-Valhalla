@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://x84amjg2aske"]
+
+[ext_resource type="Script" uid="uid://cxx4vkrf3mcwk" path="res://interactables/scripts/base_chest.gd" id="1_8ui8v"]
+[ext_resource type="Texture2D" uid="uid://d5ux6kcul7fh" path="res://interactables/chests/sprites/chestsAll.png" id="2_xg742"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nl4d7"]
+radius = 27.1662
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg742"]
+size = Vector2(16, 11)
+
+[node name="BaseChest" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_8ui8v")
+interaction_prompt = "Press F"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nl4d7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xg742")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_xg742")
