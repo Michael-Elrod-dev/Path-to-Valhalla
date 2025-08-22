@@ -32,3 +32,4 @@ Images/
 *.avif
 
 # Obsidian
+.obsidian/
