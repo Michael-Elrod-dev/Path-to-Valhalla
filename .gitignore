@@ -31,5 +31,8 @@ Images/
 *.gif
 *.avif
 
+# Godot
+*.uid
+
 # Obsidian
 .obsidian/

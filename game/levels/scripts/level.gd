@@ -7,7 +7,7 @@ extends Node2D
 ## player positioning. Automatically enables y-sorting and connects to
 ## the level manager for scene transitions.
 
-@onready var enemy_spawner: EnemySpawner = $EnemySpawner
+@onready var enemy_spawner: EnemySpawner = get_node_or_null("EnemySpawner")
 
 var manually_placed_enemies: Array[Enemy] = []
 
@@ -17,6 +17,7 @@ func _ready() -> void:
 	PlayerManager.set_as_parent(self)
 	LevelManager.level_load_started.connect(free_level)
 	collect_manually_placed_enemies()
+	
 	if enemy_spawner:
 		enemy_spawner.set_manually_placed_enemies(manually_placed_enemies)
 

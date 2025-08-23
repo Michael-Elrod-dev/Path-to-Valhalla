@@ -7,7 +7,7 @@
 - None
 ### Next Session Notes
 - Looking to flesh out the [[00-Home]] level a bit more with placeholder assets to allow me to build basic scripts for dialog boxes and interactions with NPC's
-	- Need a merchant station, a runic table, and a place where 2 NPCs can be spoken to, [[Muninn & Huginn]])
+	- Need a merchant station, a runic table, and a place where 2 NPCs can be spoken to, [[Muninn & Huginn]]
 - The date for the devlog card is still bugged on the website
 ### Date
 - August 21, 2025
