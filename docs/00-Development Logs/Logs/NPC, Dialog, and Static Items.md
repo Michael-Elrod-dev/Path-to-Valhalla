@@ -4,7 +4,7 @@
 	- Dialog interactions
 	- Interacting with static items like chests
 - Fixed the date bug in the website
-- Had a funny idea for # Ratatoskr (squirrel form the world tree) to be in the game
+- Had a funny idea for Ratatoskr (squirrel form the world tree) to be in the game
 - Commissioned two character artists for a sample animation of the main character, should see some results soon
 ### Resources Used
 - None
