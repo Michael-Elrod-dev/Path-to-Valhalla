@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8k6vl5m3xkdy"]
+
+[ext_resource type="Script" uid="uid://cj1i167mrjg7a" path="res://gui/dialog/scripts/dialog_box.gd" id="1_abc123"]
+[ext_resource type="Texture2D" uid="uid://chsfsc83ly2ih" path="res://gui/dialog/UiElegant.png" id="2_bll61"]
+[ext_resource type="FontFile" uid="uid://tn55ek7baonv" path="res://fonts/Roboto-Black.ttf" id="3_06n8k"]
+
+[node name="DialogBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abc123")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_bll61")
+region_rect = Rect2(261, 210, 88, 44)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="NameLabel" type="Label" parent="Background"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 469.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("3_06n8k")
+theme_override_font_sizes/font_size = 12
+text = "Character Name"
+
+[node name="DialogLabel" type="Label" parent="Background"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+offset_left = 11.0
+offset_top = 29.0
+offset_right = 469.0
+offset_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10
+text = "Dialog text goes here..."
+autowrap_mode = 3
+
+[node name="ContinuePrompt" type="Label" parent="Background"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 69.0
+offset_right = 469.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 10
+text = "click to continue..."
+horizontal_alignment = 2

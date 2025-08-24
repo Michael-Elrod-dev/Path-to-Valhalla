@@ -93,6 +93,6 @@ func _on_body_exited(body: Node2D) -> void:
 		hide_interaction_prompt()
 
 
-func _on_interact(player: Player) -> void:
+func _on_interact(_player: Player) -> void:
 	# Override in subclasses
 	pass

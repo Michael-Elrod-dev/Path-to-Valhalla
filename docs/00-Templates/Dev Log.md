@@ -5,4 +5,4 @@
 ### Next Session Notes
 - 
 ### Date
-- {{date:MMMM DD,YYYY}}
+- {{date:MMMM DD, YYYY}}

@@ -121,7 +121,7 @@ func _get_spawn_position() -> Vector2:
 	return Vector2.ZERO
 
 
-func _generate_random_spawn_position(camera_pos: Vector2, screen_size: Vector2) -> Vector2:
+func _generate_random_spawn_position(camera_pos: Vector2, _screen_size: Vector2) -> Vector2:
 	# Generate position outside camera view but within spawn distance
 	var angle = randf() * TAU  # Random angle
 	var distance = spawn_distance + randf() * 100.0  # Some variation in distance

@@ -25,6 +25,7 @@ PauseMenu="*res://gui/pause_menu/pause_menu.tscn"
 SaveManager="*res://globals/global_save_manager.gd"
 ResourceManager="*res://globals/global_resource_manager.gd"
 TooltipManager="*res://globals/global_tooltip_manager.gd"
+DialogManager="*res://globals/global_dialog_manager.gd"
 
 [display]
 

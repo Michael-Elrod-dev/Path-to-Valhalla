@@ -23,7 +23,8 @@ func load_all_resources() -> void:
 		if file_name.ends_with(".tres"):
 			var full_path = resource_directory + file_name
 			var resource_data = load(full_path) as ResourceData
-			resource_definitions[resource_data.resource_id] = resource_data
+			if resource_data is ResourceData:
+				resource_definitions[resource_data.resource_id] = resource_data
 		file_name = dir.get_next()
 	dir.list_dir_end()
 

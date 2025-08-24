@@ -41,6 +41,6 @@ func _find_enemies_recursive(node: Node) -> void:
 			_find_enemies_recursive(child)
 
 
-func _on_enemy_destroyed(hurtbox: Hurtbox) -> void:
+func _on_enemy_destroyed(_hurtbox: Hurtbox) -> void:
 	if enemy_spawner:
 		enemy_spawner.on_enemy_destroyed()

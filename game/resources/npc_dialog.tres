@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://bur7cx0t4mj38"]
+
+[ext_resource type="Script" uid="uid://dg6nddhdtferk" path="res://resources/scripts/dialog_data.gd" id="1_tqxlg"]
+
+[resource]
+script = ExtResource("1_tqxlg")
+character_name = "Test NPC"
+dialog_pages = Array[String](["Hello, Viking!", "Welcome to the base level!"])
+has_choices = false
+choices = Array[String]([])
+choice_actions = Array[String]([])
+can_repeat = true
+dialog_speed = 0.05
+metadata/_custom_type_script = "uid://dg6nddhdtferk"

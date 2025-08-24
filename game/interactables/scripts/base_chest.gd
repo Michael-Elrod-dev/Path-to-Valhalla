@@ -30,6 +30,6 @@ func open_chest() -> void:
 			PlayerManager.add_item(item, amount)
 
 
-func _on_interact(player: Player) -> void:
+func _on_interact(_player: Player) -> void:
 	if not is_opened:
 		open_chest()
