@@ -26,31 +26,30 @@ func enter() -> void:
 		enemy.set_direction(target_direction)
 		enemy.update_animation(animation_name)
 
-
 func exit() -> void:
 	pass
 
 
 func process(delta: float) -> EnemyState:
 	direction_timer -= delta
-	
+
 	if direction_timer <= 0.0:
 		update_target_direction()
 		direction_timer = update_direction_interval
-		
+
 		# Update facing direction for animations
 		if target_direction != Vector2.ZERO:
 			var direction_changed = enemy.set_direction(target_direction)
 			# Only update animation if the direction changed
 			if direction_changed:
 				enemy.update_animation(animation_name)
-	
+
 	# Move towards player with free 360-degree movement
 	if target_direction != Vector2.ZERO:
 		enemy.velocity = target_direction * chase_speed
 	else:
 		enemy.velocity = Vector2.ZERO
-	
+
 	return null
 
 

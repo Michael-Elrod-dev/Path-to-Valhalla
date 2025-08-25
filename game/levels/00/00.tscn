@@ -1,32 +1,36 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnvstipdc0osi"]
+[gd_scene load_steps=10 format=3 uid="uid://dnvstipdc0osi"]
 
 [ext_resource type="Script" uid="uid://ckesta5xb4100" path="res://levels/scripts/level.gd" id="1_cwumt"]
 [ext_resource type="PackedScene" uid="uid://bsvsjvh6mletc" path="res://tile_maps/level_01.tscn" id="2_ynj7n"]
 [ext_resource type="PackedScene" uid="uid://breoamcyteuui" path="res://levels/player_spawn.tscn" id="3_x21ix"]
 [ext_resource type="PackedScene" uid="uid://bfinowdsolamc" path="res://gui/hud/hud.tscn" id="4_3ws0w"]
 [ext_resource type="PackedScene" uid="uid://xhls00nnwshj" path="res://levels/level_transition.tscn" id="6_c7qn0"]
-[ext_resource type="PackedScene" uid="uid://x84amjg2aske" path="res://interactables/chests/base_chest.tscn" id="6_swyom"]
+[ext_resource type="PackedScene" uid="uid://x84amjg2aske" path="res://interactables/chests/gem_chest.tscn" id="6_swyom"]
 [ext_resource type="PackedScene" uid="uid://dtku88odljbpw" path="res://characters/npcs/npc.tscn" id="7_3q1jf"]
+[ext_resource type="PackedScene" uid="uid://cj5o8424v0yfv" path="res://interactables/chests/health_chest.tscn" id="8_l0vpr"]
 [ext_resource type="Resource" uid="uid://bur7cx0t4mj38" path="res://resources/npc_dialog.tres" id="8_t1q3s"]
 
 [node name="00" type="Node2D"]
 script = ExtResource("1_cwumt")
+
+[node name="Hud" parent="." instance=ExtResource("4_3ws0w")]
 
 [node name="Environment" parent="." instance=ExtResource("2_ynj7n")]
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_x21ix")]
 position = Vector2(47, 137)
 
-[node name="Hud" parent="." instance=ExtResource("4_3ws0w")]
-
 [node name="LevelTransition" parent="." instance=ExtResource("6_c7qn0")]
 position = Vector2(480, 16)
 level = "uid://knvbr7tdes1r"
 snap_to_grid = true
 
-[node name="BaseChest" parent="." instance=ExtResource("6_swyom")]
-position = Vector2(239, 106)
-
 [node name="NPC" parent="." instance=ExtResource("7_3q1jf")]
 position = Vector2(172, 165)
 dialog_data = ExtResource("8_t1q3s")
+
+[node name="GemChest" parent="." instance=ExtResource("6_swyom")]
+position = Vector2(236, 103)
+
+[node name="HealthChest" parent="." instance=ExtResource("8_l0vpr")]
+position = Vector2(152, 102)

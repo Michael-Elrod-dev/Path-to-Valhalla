@@ -31,17 +31,17 @@ func _ready() -> void:
 
 func setup_tooltip() -> void:
 	custom_minimum_size.x = tooltip_width
-	
+
 	if desc_label:
 		desc_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		desc_label.custom_minimum_size.x = tooltip_width - 20
-	
+
 	if title_label:
 		if title_font:
 			title_label.add_theme_font_override("font", title_font)
 		title_label.add_theme_font_size_override("font_size", title_font_size)
 		title_label.add_theme_color_override("font_color", title_color)
-	
+
 	if desc_label:
 		if desc_font:
 			desc_label.add_theme_font_override("font", desc_font)

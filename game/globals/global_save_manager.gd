@@ -60,10 +60,7 @@ func load_inventory_data() -> void:
 	if current_save.player.has("inventory"):
 		PlayerManager.player_resources = current_save.player.inventory.duplicate()
 		for item_id in PlayerManager.player_resources:
-			PlayerManager.resource_changed.emit(
-					item_id, 
-					PlayerManager.player_resources[item_id]
-			)
+			PlayerManager.resource_changed.emit(item_id, PlayerManager.player_resources[item_id])
 
 
 func update_scene_path() -> void:

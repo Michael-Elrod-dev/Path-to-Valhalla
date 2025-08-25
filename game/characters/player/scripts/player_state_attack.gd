@@ -10,6 +10,9 @@ extends PlayerState
 @export var attack_sound = AudioStream
 @export_range(1, 20, 0.5) var decelerate_speed: float = 5.0
 
+var attacking: bool = false
+var attack_direction: Vector2
+
 @onready var dash: StateDash = $"../Dash"
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
@@ -17,9 +20,6 @@ extends PlayerState
 @onready var hurtbox: Hurtbox = %AttackHurtbox
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
-
-var attacking: bool = false
-var attack_direction: Vector2
 
 
 func enter() -> void:
@@ -38,7 +38,7 @@ func enter() -> void:
 	audio.pitch_scale = randf_range(0.8, 1.1)
 	audio.play()
 	attacking = true
-	
+
 	await get_tree().create_timer(0.075).timeout
 	if attacking:
 		hurtbox.monitoring = true
@@ -72,5 +72,5 @@ func handle_input(_event: InputEvent) -> State:
 	return null
 
 
-func end_attack(_newAnimName) -> void:
+func end_attack(_new_anim_name) -> void:
 	attacking = false

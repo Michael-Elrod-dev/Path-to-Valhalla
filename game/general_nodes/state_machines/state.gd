@@ -7,6 +7,7 @@ extends Node
 ## update loops (process/physics). Subclasses should override these
 ## methods to implement specific state behavior.
 
+
 func initialize() -> void:
 	pass
 

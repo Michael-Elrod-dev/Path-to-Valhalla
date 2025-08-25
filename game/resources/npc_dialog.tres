@@ -6,9 +6,6 @@
 script = ExtResource("1_tqxlg")
 character_name = "Test NPC"
 dialog_pages = Array[String](["Hello, Viking!", "Welcome to the base level!"])
-has_choices = false
-choices = Array[String]([])
-choice_actions = Array[String]([])
 can_repeat = true
 dialog_speed = 0.05
 metadata/_custom_type_script = "uid://dg6nddhdtferk"

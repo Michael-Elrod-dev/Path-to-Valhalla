@@ -5,11 +5,11 @@ extends CanvasLayer
 ## Pauses the game tree when activated with the pause action.
 ## Provides options to save the current game state or load a previous save.
 
+var is_paused: bool = false
+
 @onready var vbox_container: VBoxContainer = $VBoxContainer
 @onready var button_save: Button = $VBoxContainer/button_save
 @onready var button_load: Button = $VBoxContainer/button_load
-
-var is_paused: bool = false
 
 
 func _ready() -> void:

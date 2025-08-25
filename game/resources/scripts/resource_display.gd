@@ -26,7 +26,7 @@ var resource_rows: Dictionary = {}
 
 
 func _ready() -> void:
-	add_theme_constant_override("separation", resource_spacing)	
+	add_theme_constant_override("separation", resource_spacing)
 	create_all_resource_displays()
 	PlayerManager.resource_changed.connect(_on_resource_changed)
 	await get_tree().process_frame
@@ -45,13 +45,13 @@ func create_resource_row(resource_id: String) -> void:
 	var resource_data = ResourceManager.get_resource_data(resource_id)
 	if not resource_data:
 		return
-	
+
 	var h_box = HBoxContainer.new()
 	h_box.name = resource_id.capitalize() + "Row"
 	h_box.mouse_filter = Control.MOUSE_FILTER_PASS
 	h_box.focus_mode = Control.FOCUS_NONE
 	h_box.add_theme_constant_override("separation", icon_spacing)
-	
+
 	var icon = TextureRect.new()
 	icon.name = "Icon"
 	icon.texture = resource_data.texture
@@ -61,7 +61,7 @@ func create_resource_row(resource_id: String) -> void:
 	icon.size = icon_size
 	icon.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	
+
 	var count_label = Label.new()
 	count_label.name = "Count"
 	count_label.text = "0"
@@ -72,7 +72,7 @@ func create_resource_row(resource_id: String) -> void:
 	h_box.add_child(icon)
 	h_box.add_child(count_label)
 	add_child(h_box)
-	
+
 	resource_rows[resource_id] = {
 		"container": h_box,
 		"icon": icon,
@@ -91,12 +91,12 @@ func update_all_displays() -> void:
 func update_resource_display(resource_id: String) -> void:
 	if not resource_rows.has(resource_id):
 		return
-	
+
 	var current_count = PlayerManager.get_item_count(resource_id)
 	var row = resource_rows[resource_id]
 	var current_text = row.count_label.text
 	var new_text = str(current_count)
-	
+
 	if current_text != new_text:
 		row.count_label.text = new_text
 		update_count_width(row.count_label)
@@ -105,13 +105,9 @@ func update_resource_display(resource_id: String) -> void:
 func update_count_width(count_label: Label) -> void:
 	var font = count_label.get_theme_font("font")
 	var font_size_actual = count_label.get_theme_font_size("font_size")
-	var text_width = font.get_string_size(
-			count_label.text, 
-			HORIZONTAL_ALIGNMENT_LEFT, 
-			-1, 
-			font_size_actual
-	).x
-	
+	var text = count_label.text
+	var string_size = font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size_actual)
+	var text_width = string_size.x
 	var new_width = max(min_width, text_width + padding * 2)
 	count_label.custom_minimum_size.x = new_width
 
@@ -119,11 +115,11 @@ func update_count_width(count_label: Label) -> void:
 func _on_resource_changed(item_id: String, new_count: int) -> void:
 	if not resource_rows.has(item_id):
 		return
-	
+
 	var row = resource_rows[item_id]
 	var current_text = row.count_label.text
 	var new_text = str(new_count)
-	
+
 	if current_text != new_text:
 		row.count_label.text = new_text
 		update_count_width(row.count_label)

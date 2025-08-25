@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://x84amjg2aske"]
+[gd_scene load_steps=5 format=3 uid="uid://cj5o8424v0yfv"]
 
-[ext_resource type="Script" uid="uid://cxx4vkrf3mcwk" path="res://interactables/scripts/base_chest.gd" id="1_8ui8v"]
-[ext_resource type="Texture2D" uid="uid://d5ux6kcul7fh" path="res://interactables/chests/sprites/chestsAll.png" id="2_xg742"]
+[ext_resource type="Script" uid="uid://dbemhrescans2" path="res://interactables/scripts/health_chest.gd" id="1_gwfmi"]
+[ext_resource type="Texture2D" uid="uid://d5ux6kcul7fh" path="res://interactables/chests/sprites/chestsAll.png" id="2_sdqkn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nl4d7"]
 radius = 27.1662
@@ -9,16 +9,17 @@ radius = 27.1662
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xg742"]
 size = Vector2(16, 11)
 
-[node name="BaseChest" type="Area2D"]
+[node name="HealthChest" type="Area2D"]
 collision_layer = 16
-script = ExtResource("1_8ui8v")
-interaction_prompt = "Press F"
+script = ExtResource("1_gwfmi")
+interaction_prompt = "Press F to open"
+label_offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nl4d7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xg742")
+texture = ExtResource("2_sdqkn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 

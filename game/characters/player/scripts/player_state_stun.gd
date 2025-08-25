@@ -11,11 +11,11 @@ extends PlayerState
 @export var decelerate_speed: float = 10.0
 @export var invulnerable_duration: float = 1.0
 
-@onready var idle: PlayerState = $"../Idle"
-
 var hurtbox: Hurtbox
 var direction: Vector2
 var next_state: State = null
+
+@onready var idle: PlayerState = $"../Idle"
 
 
 func initialize() -> void:

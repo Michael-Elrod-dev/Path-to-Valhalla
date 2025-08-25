@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8s4380fji7p3"]
+[gd_scene load_steps=4 format=3 uid="uid://c8s4380fji7p3"]
 
 [ext_resource type="Script" uid="uid://bqksmjspof2ef" path="res://tooltips/scripts/tooltip.gd" id="1_23tow"]
+[ext_resource type="FontFile" uid="uid://dj6n7oi8eubij" path="res://fonts/NorseBold.otf" id="2_itbp8"]
+[ext_resource type="FontFile" uid="uid://bkdri4y022chy" path="res://fonts/Norse.otf" id="3_x7qvq"]
 
 [node name="Tooltip" type="Control"]
 layout_mode = 3
@@ -26,6 +28,10 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Background/Content"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_itbp8")
+theme_override_font_sizes/font_size = 10
 
 [node name="Description" type="Label" parent="Background/Content"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_x7qvq")
+theme_override_font_sizes/font_size = 8

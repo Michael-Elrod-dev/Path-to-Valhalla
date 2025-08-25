@@ -1,6 +1,8 @@
-class_name BaseChest
+class_name GemChest
 extends Interactable
 ## Chest that can be opened by the player
+##
+## Provides the Player with gems
 
 @export var loot_items: Array[String] = ["gems"]
 @export var loot_amounts: Array[int] = [5]
@@ -9,10 +11,8 @@ extends Interactable
 
 func _ready() -> void:
 	super._ready()
-	
-	# Set chest-specific prompt
-	interaction_prompt = "Press F to open chest"
-	
+	update_interaction_prompt()
+
 	# If already opened, disable interaction
 	if is_opened:
 		can_interact = false
@@ -21,7 +21,7 @@ func _ready() -> void:
 func open_chest() -> void:
 	is_opened = true
 	can_interact = false
-	
+
 	# Give loot to player
 	for i in range(loot_items.size()):
 		if i < loot_amounts.size():

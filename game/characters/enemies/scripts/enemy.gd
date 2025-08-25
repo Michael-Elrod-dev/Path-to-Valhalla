@@ -7,12 +7,12 @@ extends Character
 ## sprite flipping based on direction, and automatic player targeting.
 ## Handles damage and destruction through connected hitbox.
 
+var player: Player
+var direction_8: Array
+
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
-
-var player: Player
-var direction_8: Array
 
 
 func _ready() -> void:
@@ -32,22 +32,21 @@ func set_direction(new_direction: Vector2) -> bool:
 	direction = new_direction
 	if direction == Vector2.ZERO:
 		return false
-	
+
 	# For animation purposes, snap to nearest 8-direction
 	var best_direction = get_nearest_direction(direction)
 	if best_direction == cardinal_direction:
 		return false
-	
+
 	cardinal_direction = best_direction
 	direction_changed.emit(best_direction)
-	
+
 	# Update sprite facing
 	if cardinal_direction.x < 0:  # Any left-facing direction
 		sprite.scale.x = -1
 	elif cardinal_direction.x > 0:  # Any right-facing direction
 		sprite.scale.x = 1
 	# For pure up/down (x == 0), keep current facing
-	
 	return true
 
 
@@ -57,21 +56,24 @@ func update_animation(state: String) -> void:
 
 func animation_direction() -> String:
 	var result = ""
-	
-	if cardinal_direction.is_equal_approx(Vector2(0, 1)):  # South
+	var down = Vector2(0, 1)
+	var up = Vector2(0, -1)
+	var left = Vector2(1, 0)
+	var right = Vector2(-1, 0)
+
+	if cardinal_direction.is_equal_approx(down):
 		result = "down"
-	elif cardinal_direction.is_equal_approx(Vector2(0, -1)):  # North
+	elif cardinal_direction.is_equal_approx(up):
 		result = "up"
-	elif (cardinal_direction.is_equal_approx(Vector2(1, 0)) 
-			or cardinal_direction.is_equal_approx(Vector2(-1, 0))):  # East or West
+	elif (cardinal_direction.is_equal_approx(left) or cardinal_direction.is_equal_approx(right)):
 		result = "side"
-	elif cardinal_direction.y < 0:  # Northeast or Northwest
+	elif cardinal_direction.y < 0:
 		result = "up"
-	elif cardinal_direction.y > 0:  # Southeast or Southwest
+	elif cardinal_direction.y > 0:
 		result = "down"
 	else:
 		result = "down"
-		
+
 	return result
 
 

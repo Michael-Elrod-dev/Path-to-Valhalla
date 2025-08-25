@@ -8,15 +8,15 @@ extends Control
 
 signal advance_requested
 
-@onready var character_name_label: Label = $Background/NameLabel
-@onready var dialog_label: Label = $Background/DialogLabel
-@onready var continue_prompt: Label = $Background/ContinuePrompt
-
 var is_typing: bool = false
 var current_text: String = ""
 var typing_timer: float = 0.0
-var typing_speed: float = 0.05
+var typing_speed: float = 0.005
 var visible_characters: int = 0
+
+@onready var character_name_label: Label = $NameLabel
+@onready var dialog_label: Label = $DialogLabel
+@onready var continue_prompt: Label = $ContinuePrompt
 
 
 func _ready() -> void:
@@ -27,18 +27,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_typing:
 		typing_timer += delta
-		
+
 		if typing_timer >= typing_speed:
 			typing_timer = 0.0
 			visible_characters += 1
-			
+
 			if visible_characters >= current_text.length():
 				complete_text()
 			else:
 				dialog_label.visible_characters = visible_characters
 
 
-func show_dialog(character_name: String, text: String, speed: float = 0.05) -> void:
+func show_dialog(character_name: String, text: String, speed: float) -> void:
 	character_name_label.text = character_name
 	current_text = text
 	typing_speed = speed
@@ -46,9 +46,7 @@ func show_dialog(character_name: String, text: String, speed: float = 0.05) -> v
 	dialog_label.visible_characters = 0
 	visible_characters = 0
 	typing_timer = 0.0
-	
 	continue_prompt.visible = false
-	
 	is_typing = true
 
 

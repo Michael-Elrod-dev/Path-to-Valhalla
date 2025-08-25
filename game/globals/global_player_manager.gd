@@ -50,7 +50,7 @@ func unparent_player(parent: Node2D) -> void:
 func add_item(item_id: String, amount: int = 1) -> void:
 	if not player_resources.has(item_id):
 		player_resources[item_id] = 0
-	
+
 	player_resources[item_id] += amount
 	resource_changed.emit(item_id, player_resources[item_id])
 

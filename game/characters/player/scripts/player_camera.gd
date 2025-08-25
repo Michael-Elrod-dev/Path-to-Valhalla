@@ -6,6 +6,7 @@ extends Camera2D
 ## Automatically updates its limits based on the current level bounds
 ## to prevent showing areas outside the tilemap.
 
+
 func _ready():
 	LevelManager.bounds_changed.connect(update_limits)
 	update_limits(LevelManager.current_bounds)

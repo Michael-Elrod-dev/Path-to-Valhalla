@@ -19,7 +19,7 @@ var timer: float = 0.0
 
 func initialize() -> void:
 	pass
-	
+
 
 func enter() -> void:
 	enemy.velocity = Vector2.ZERO
@@ -29,14 +29,14 @@ func enter() -> void:
 
 func exit() -> void:
 	pass
-	
+
 
 func process(delta: float) -> EnemyState:
 	timer -= delta
 	if timer <= 0:
 		return next_state
 	return null
-	
+
 
 func physics(_delta: float) -> EnemyState:
 	return null

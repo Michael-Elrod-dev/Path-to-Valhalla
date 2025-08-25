@@ -11,7 +11,7 @@ var current_tooltip: Tooltip
 func _ready() -> void:
 	await get_tree().process_frame
 	current_tooltip = preload("res://tooltips/tooltip.tscn").instantiate()
-	
+
 	var ui_layer = CanvasLayer.new()
 	ui_layer.layer = 100
 	get_tree().root.add_child(ui_layer)

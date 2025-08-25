@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsulhrk310abx"]
+
+[ext_resource type="Script" uid="uid://c4bwytlvtuua6" path="res://interactables/scripts/interaction_label.gd" id="1_wliqe"]
+[ext_resource type="FontFile" uid="uid://bkdri4y022chy" path="res://fonts/Norse.otf" id="2_tvlvx"]
+
+[node name="InteractionLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wliqe")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tvlvx")
+theme_override_font_sizes/font_size = 10
+text = "label"
+horizontal_alignment = 1
+vertical_alignment = 1
