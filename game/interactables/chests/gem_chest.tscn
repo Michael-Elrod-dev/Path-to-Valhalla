@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://x84amjg2aske"]
+[gd_scene load_steps=6 format=3 uid="uid://x84amjg2aske"]
 
 [ext_resource type="Script" uid="uid://cxx4vkrf3mcwk" path="res://interactables/scripts/gem_chest.gd" id="1_8ui8v"]
+[ext_resource type="FontFile" uid="uid://dj6n7oi8eubij" path="res://fonts/NorseBold.otf" id="2_gwv5s"]
 [ext_resource type="Texture2D" uid="uid://d5ux6kcul7fh" path="res://interactables/chests/sprites/chestsAll.png" id="2_xg742"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nl4d7"]
@@ -14,6 +15,8 @@ collision_layer = 16
 script = ExtResource("1_8ui8v")
 interaction_prompt = "Press F to open"
 label_offset = Vector2(0, -12)
+font = ExtResource("2_gwv5s")
+font_size = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nl4d7")

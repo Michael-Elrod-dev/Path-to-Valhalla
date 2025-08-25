@@ -6,10 +6,17 @@ extends Character
 ## Extends Character for consistency with game architecture while providing
 ## dialog interaction capabilities. Supports repeatable conversations.
 
+const INTERACTION_LABEL_SCENE = preload("res://interactables/interaction_label.tscn")
+
 @export var dialog_data: DialogData
 @export var can_repeat_dialog: bool = true
 @export var interaction_prompt: String = "Press F to talk"
 @export var label_offset: Vector2 = Vector2(0.0, 0.0)
+
+@export_group("Font Settings")
+@export var font: Font = preload("res://fonts/NorseBold.otf")
+@export var font_size: int = 6
+@export var font_color: Color = Color.WHITE
 
 var has_talked: bool = false
 var player_in_range: bool = false
@@ -24,26 +31,31 @@ var prompt_label: InteractionLabel
 func _ready() -> void:
 	super._ready()
 	setup_interaction_area()
-	
+
 	if PlayerManager.player:
 		player_reference = PlayerManager.player
 	else:
 		PlayerManager.player_ready.connect(_on_player_ready)
-	
+
 	# Use the new label system
 	setup_interaction_label()
-	
+
 	if animation_player:
 		update_animation("idle_S")
-	
+
 	if not dialog_data:
 		push_warning("NPC has no dialog_data assigned!")
 
 
 func setup_interaction_label() -> void:
-	var label_scene = preload("res://interactables/interaction_label.tscn")
-	prompt_label = label_scene.instantiate()
+	prompt_label = INTERACTION_LABEL_SCENE.instantiate()
 	prompt_label.position = label_offset
+
+	# Apply font settings
+	prompt_label.font = font
+	prompt_label.font_size = font_size
+	prompt_label.font_color = font_color
+
 	add_child(prompt_label)
 
 
@@ -126,6 +138,5 @@ func _on_interaction_area_exited(body: Node2D) -> void:
 
 
 func _on_dialog_ended() -> void:
-	# Show prompt again if dialog can be repeated
 	if player_in_range and can_interact():
 		show_interaction_prompt()

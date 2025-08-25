@@ -4,9 +4,16 @@ extends Area2D
 
 signal interacted(player: Player)
 
+const INTERACTION_LABEL_SCENE = preload("res://interactables/interaction_label.tscn")
+
 @export var interaction_prompt: String = "Press F to interact"
 @export var label_offset: Vector2 = Vector2(-40.0, -20.0)
 @export var can_interact: bool = true
+
+@export_group("Font Settings")
+@export var font: = preload("res://fonts/NorseBold.otf")
+@export var font_size: int = 6
+@export var font_color: Color = Color.WHITE
 
 var player_in_range: bool = false
 var player_reference: Player
@@ -14,7 +21,6 @@ var prompt_label: InteractionLabel
 
 
 func _ready() -> void:
-	# Set up detection signals
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
@@ -41,10 +47,14 @@ func interact(player: Player) -> void:
 
 
 func setup_interaction_label() -> void:
-	# Load and instance the label scene
-	var label_scene = preload("res://interactables/interaction_label.tscn")
-	prompt_label = label_scene.instantiate()
+	prompt_label = INTERACTION_LABEL_SCENE.instantiate()
 	prompt_label.position = label_offset
+
+	# Apply font settings to the label
+	prompt_label.font = font
+	prompt_label.font_size = font_size
+	prompt_label.font_color = font_color
+
 	add_child(prompt_label)
 
 

@@ -73,7 +73,6 @@ func animation_direction() -> String:
 		result = "down"
 	else:
 		result = "down"
-
 	return result
 
 
