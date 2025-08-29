@@ -1,12 +1,12 @@
 ## [[Mechanics Overview|Gameplay]]
 - A 2D, Viking themed, segmented rougelite split across 3 Acts
-- Gameplay inspired by [Hades](https://store.steampowered.com/app/1145360/Hades/)
+- Gameplay inspired by [Hades](https://store.steampowered.com/app/1145360/Hades/) on Steam
 ## Narrative
 - **Player Character** - The main character is a Viking who wishes to enter Valhalla after falling in battle
 - **Purpose** - In order for the player to be allowed in Valhalla they must complete a combat trial in each of the 9 realms
 - **Theme** - All characters, items, and environments are modeled after Norse mythology
 ## [[Design Overview|Art Style]]
-- Primary inspiration from [Hyper Light Drifter's](https://store.steampowered.com/app/257850/Hyper_Light_Drifter/) pixel art combined with authentic Norse mythology aesthetics and Viking culture.
+- Primary inspiration from [Flooded Burials](https://store.steampowered.com/app/3045030/Flooded_Burials/) pixel art style on Steam, combined with authentic Norse mythology aesthetics.
 ## Progression
 - **3 Acts**
 	- **Act 1**

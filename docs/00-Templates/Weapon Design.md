@@ -6,4 +6,13 @@
 - 
 ### Size
 - 
+### Animation
+- Idle
+	- 
+- Run
+	- 
+- Death
+	- 
+- Dash
+	- 
 ### References

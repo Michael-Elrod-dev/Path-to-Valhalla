@@ -2,18 +2,19 @@
 - The first level in the game
 ### Visual Design
 - Modeled after the Legend of Zelda: Breath of the Wild base environment
-- A sunlit green, grassy environment with sparse trees and potentially water for edge of map boundaries and obstacles as rivers
+- A sunlit green, grassy environment with sparse trees and areas of flowing water
 - Flowers and boulders as land accessories
-- Rune stone monuments scattered around in special places
+- Rune stone monuments scattered around in certain places
 ### Visual Effects
 - Faint white lines showing wind blowing
 - Faint clouds of fog
-- Potentially wind lines in grass tiles as well
+- Potentially wind lines in grass as well
 - Might be too much but could do leaf particles falling from nearby trees
 - Boss fight could turn weather to overcast or even a storm
 ### Color Scheme
 - Brights greens and browns
 - Clear blue waters
+- Yellow rays of light with white accents
 ### Enemies
 - [[02-Game Art/Enemies/Draugr|Draugr]]
 - [[02-Game Art/Enemies/Dire Wolf|Dire Wolf]]

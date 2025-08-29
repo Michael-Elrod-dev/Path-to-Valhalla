@@ -29,18 +29,18 @@ func _ready() -> void:
 func create_save() -> void:
 	update_player_data()
 	update_scene_path()
+
+	var encoded_save = SaveEncoder.encode_save(current_save)
 	var file := FileAccess.open(SAVE_PATH + "save.sav", FileAccess.WRITE)
-	var save_file = JSON.stringify(current_save)
-	file.store_line(save_file)
+	file.store_line(encoded_save)
 	game_saved.emit()
 
 
 func load_save() -> void:
 	var file := FileAccess.open(SAVE_PATH + "save.sav", FileAccess.READ)
-	var save_file := JSON.new()
-	save_file.parse(file.get_line())
-	var save_dict: Dictionary = save_file.get_data() as Dictionary
-	current_save = save_dict
+	var encoded_data = file.get_line()
+	current_save = SaveEncoder.decode_save(encoded_data)
+
 	load_inventory_data()
 	LevelManager.load_new_level(current_save.scene_path)
 	await LevelManager.level_load_started
